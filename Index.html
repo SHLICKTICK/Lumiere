@@ -1,567 +1,1284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lumière Beauty</title>
-<link rel="stylesheet" href="css/styles.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-
-<header class="site-header" id="siteHeader">
-  <div class="logo">
-    <span class="mark">LUMIÈRE</span>
-    <span class="sub">BEAUTY</span>
-  </div>
-
-  <nav class="primary-nav" aria-label="Primary">
-    <a href="#">SHOP</a>
-    <a href="#">COLLECTIONS</a>
-    <a href="#">BESTSELLERS</a>
-    <a href="#">ABOUT</a>
-    <a href="#">JOURNAL</a>
-  </nav>
-
-  <div class="header-icons">
-    <button aria-label="Search">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    </button>
-    <button aria-label="Account">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
-    </button>
-    <button aria-label="Shopping bag">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
-    </button>
-    <button class="menu-toggle" aria-label="Open menu" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
-    </button>
-  </div>
-</header>
-
-<nav class="mobile-nav" id="mobileNav" aria-label="Mobile" aria-hidden="true">
-  <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
-  </button>
-  <a href="#">SHOP</a>
-  <a href="#">COLLECTIONS</a>
-  <a href="#">BESTSELLERS</a>
-  <a href="#">ABOUT</a>
-  <a href="#">JOURNAL</a>
-</nav>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-copy">
-      <p class="eyebrow">Bold. Timeless. You.</p>
-      <h1 class="headline">Makeup that<br>moves with <em>you.</em></h1>
-      <p class="subcopy">High performance formulas. Effortless beauty. Made for every moment.</p>
-      <a href="#" class="cta">
-        Shop collection
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg>
-      </a>
-    </div>
-
-    <div class="value-props">
-      <div class="value-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2 4 9l8 13 8-13-8-7z"/><path d="M4 9h16"/><path d="M9.5 2 8 9l4 13 4-13-1.5-7"/></svg>
-        <div>
-          <p class="value-heading">High performance</p>
-          <p class="value-desc">Clean. Long-lasting.</p>
-        </div>
-      </div>
-      <div class="value-divider"></div>
-      <div class="value-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3c3 4.5 6 8 6 11.5A6 6 0 0 1 6 14.5C6 11 9 7.5 12 3z"/></svg>
-        <div>
-          <p class="value-heading">Skin loving</p>
-          <p class="value-desc">Nourishing ingredients.</p>
-        </div>
-      </div>
-      <div class="value-divider"></div>
-      <div class="value-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 2h6"/><path d="M10 2v6l-5.5 9.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-3.5L14 8V2"/><path d="M7.5 15h9"/></svg>
-        <div>
-          <p class="value-heading">Beauty for all</p>
-          <p class="value-desc">Every shade. Every you.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="statement">
-  <div class="statement-inner">
-    <h2 class="statement-heading">Makeup should never<br>hide the person<br>wearing it.</h2>
-    <div class="statement-copy">
-      <p>
-        LUMIÈRE creates high-performance essentials<br>
-        designed to enhance what is already there.<br>
-        Skin that looks like skin.<br>
-        Colour that feels instinctive.<br>
-        Formulas made to move through life with you.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="essentials" aria-labelledby="essentials-title">
-  <div class="essentials-media" aria-hidden="true">
-    <img src="assets/essentials.png" alt="">
-  </div>
-  <div class="essentials-shade" aria-hidden="true"></div>
-  <div class="essentials-rule" aria-hidden="true"></div>
-
-  <div class="essentials-content">
-    <p class="essentials-kicker">The Lumi&egrave;re System</p>
-    <h2 id="essentials-title">Six essentials.<br><em>Infinite expression.</em></h2>
-    <p class="essentials-note">A considered edit for skin, colour and light&mdash;<br>made to layer, blend and become your own.</p>
-    <a href="#" class="essentials-link">
-      Explore the collection
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-        <line x1="4" y1="12" x2="20" y2="12"/>
-        <polyline points="14 6 20 12 14 18"/>
-      </svg>
-    </a>
-  </div>
-
-  <p class="essentials-index" aria-hidden="true">06 / ESSENTIALS</p>
-</section>
-
-<section class="essential-edit" aria-labelledby="essential-edit-title">
-  <div class="essential-edit-heading">
-    <p class="essential-edit-kicker">The Essentials</p>
-    <h2 id="essential-edit-title">Everything you need. <em>Nothing you don&rsquo;t.</em></h2>
-  </div>
-
-  <div class="essential-grid">
-    <article class="essential-card">
-      <p class="essential-number">01</p>
-      <a href="#" class="essential-image" aria-label="Discover Skin Veil serum foundation">
-        <img src="assets/essentials/lumiere-skin-veil-foundation.png" alt="Lumiere Skin Veil serum foundation">
-      </a>
-      <div class="essential-card-copy">
-        <h3>Skin Veil</h3>
-        <p>Serum Foundation<br>R620</p>
-        <a href="#" class="essential-discover">Discover <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="essential-card">
-      <p class="essential-number">02</p>
-      <a href="#" class="essential-image" aria-label="Discover Glass lip oil">
-        <img src="assets/essentials/lumiere-glass-lip-oil.png" alt="Lumiere Glass lip oil">
-      </a>
-      <div class="essential-card-copy">
-        <h3>Glass</h3>
-        <p>Lip Oil<br>R340</p>
-        <a href="#" class="essential-discover">Discover <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="essential-card">
-      <p class="essential-number">03</p>
-      <a href="#" class="essential-image" aria-label="Discover Flush liquid blush">
-        <img src="assets/essentials/lumiere-flush-liquid-blush.png" alt="Lumiere Flush liquid blush">
-      </a>
-      <div class="essential-card-copy">
-        <h3>Flush</h3>
-        <p>Liquid Blush<br>R300</p>
-        <a href="#" class="essential-discover">Discover <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="essential-card">
-      <p class="essential-number">04</p>
-      <a href="#" class="essential-image" aria-label="Discover Sculpt contour stick">
-        <img src="assets/essentials/lumiere-sculpt-contour-stick.png" alt="Lumiere Sculpt contour stick">
-      </a>
-      <div class="essential-card-copy">
-        <h3>Sculpt</h3>
-        <p>Contour Stick<br>R420</p>
-        <a href="#" class="essential-discover">Discover <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="essential-card">
-      <p class="essential-number">05</p>
-      <a href="#" class="essential-image" aria-label="Discover Obsidian eye collection">
-        <img src="assets/essentials/lumiere-obsidian-precision-liner.png" alt="Lumiere Obsidian precision liner">
-      </a>
-      <div class="essential-card-copy">
-        <h3>Obsidian</h3>
-        <p>Eye Collection<br>R320</p>
-        <a href="#" class="essential-discover">Discover <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-
-    <article class="essential-card">
-      <p class="essential-number">06</p>
-      <a href="#" class="essential-image" aria-label="Discover Afterglow setting mist">
-        <img src="assets/essentials/lumiere-afterglow-setting-mist.png" alt="Lumiere Afterglow setting mist">
-      </a>
-      <div class="essential-card-copy">
-        <h3>Afterglow</h3>
-        <p>Setting Mist<br>R390</p>
-        <a href="#" class="essential-discover">Discover <span aria-hidden="true">&rarr;</span></a>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="most-wanted" aria-labelledby="most-wanted-title">
-  <div class="most-wanted-header">
-    <h2 id="most-wanted-title">Most Wanted</h2>
-    <a href="#" class="most-wanted-all">View all bestsellers <span aria-hidden="true">&rarr;</span></a>
-  </div>
-
-  <div class="bestseller-grid">
-    <article class="bestseller-card">
-      <a href="#" class="bestseller-image" aria-label="View Glass 01 lip oil">
-        <img src="assets/essentials/lumiere-glass-lip-oil.png" alt="Lumiere Glass 01 lip oil in Blood Cherry">
-      </a>
-      <div class="bestseller-info">
-        <div>
-          <h3>Glass 01</h3>
-          <p class="bestseller-variant">Blood Cherry<br>Lip Oil</p>
-          <p class="bestseller-price">R340</p>
-          <div class="shade-list" aria-label="Available shades">
-            <span class="shade active" style="--shade:#a31527" title="Blood Cherry"></span>
-            <span class="shade" style="--shade:#be313f" title="Crimson"></span>
-            <span class="shade" style="--shade:#8e2632" title="Merlot"></span>
-            <span class="shade" style="--shade:#d56b72" title="Rose"></span>
-            <span class="shade" style="--shade:#b56169" title="Fig"></span>
-          </div>
-        </div>
-        <button class="bag-button" type="button">Add to bag</button>
-      </div>
-    </article>
-
-    <article class="bestseller-card">
-      <a href="#" class="bestseller-image" aria-label="View Skin Veil serum foundation">
-        <img src="assets/essentials/lumiere-skin-veil-foundation.png" alt="Lumiere Skin Veil serum foundation">
-      </a>
-      <div class="bestseller-info">
-        <div>
-          <h3>Skin Veil</h3>
-          <p class="bestseller-variant">Serum Foundation</p>
-          <p class="bestseller-price">R620</p>
-          <div class="shade-list" aria-label="Available shades">
-            <span class="shade active" style="--shade:#e4aa77" title="Light Warm"></span>
-            <span class="shade" style="--shade:#cb8e61" title="Medium Warm"></span>
-            <span class="shade" style="--shade:#ae7048" title="Tan Neutral"></span>
-            <span class="shade" style="--shade:#8d5438" title="Deep Warm"></span>
-            <span class="shade" style="--shade:#6e3f2e" title="Rich Neutral"></span>
-          </div>
-        </div>
-        <button class="bag-button" type="button">Add to bag</button>
-      </div>
-    </article>
-
-    <article class="bestseller-card">
-      <a href="#" class="bestseller-image" aria-label="View Afterglow setting mist">
-        <img src="assets/essentials/lumiere-afterglow-setting-mist.png" alt="Lumiere Afterglow setting mist">
-      </a>
-      <div class="bestseller-info">
-        <div>
-          <h3>Afterglow</h3>
-          <p class="bestseller-variant">Setting Mist</p>
-          <p class="bestseller-price">R390</p>
-        </div>
-        <button class="bag-button" type="button">Add to bag</button>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="get-look" aria-labelledby="get-look-title">
-  <div class="featured-product">
-    <div class="featured-copy">
-      <p class="featured-kicker">Featured</p>
-      <h2>Skin Veil</h2>
-      <p class="featured-tagline">Skin, uninterrupted.</p>
-      <p class="featured-description">A lightweight serum foundation that blends seamlessly, hydrates deeply and moves naturally with your skin.</p>
-
-      <div class="featured-benefits" aria-label="Product benefits">
-        <div><span aria-hidden="true">◇</span><p>Buildable<br>coverage</p></div>
-        <div><span aria-hidden="true">◯</span><p>Skin-like<br>finish</p></div>
-        <div><span aria-hidden="true">△</span><p>24H<br>hydration</p></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumière Beauty</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <div class="logo">
+        <span class="mark">LUMIÈRE</span>
+        <span class="sub">BEAUTY</span>
       </div>
 
-      <a href="#" class="featured-link">Explore Skin Veil <span aria-hidden="true">&rarr;</span></a>
-    </div>
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="#">ESSENTIALS</a>
+        <a href="#">BESTSELLERS</a>
+        <a href="#">PRODUCTS</a>
+        <a href="#">MAGAZINES</a>
+        <a href="#">GALLERY</a>
+        <a href="#">MODELS</a>
+        <a href="#">CREDITS</a>
+      </nav>
 
-    <div class="featured-product-image">
-      <img src="assets/essentials/lumiere-skin-veil-foundation.png" alt="Lumiere Skin Veil serum foundation">
-    </div>
-  </div>
+      <div class="header-icons">
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+          >
+            <line x1="3" y1="7" x2="21" y2="7" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="17" x2="21" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </header>
 
-  <div class="look-story">
-    <img class="look-story-image" src="assets/skin-veil-campaign.png" alt="Lumiere Skin Veil beauty look with luminous skin and wet-look hair">
-    <div class="look-story-shade" aria-hidden="true"></div>
-    <div class="look-story-content">
-      <h2 id="get-look-title">Get the Look</h2>
-      <ol class="look-routine">
-        <li><span>01</span><div><strong>Skin</strong><p>Skin Veil<br>Serum Foundation</p></div></li>
-        <li><span>02</span><div><strong>Cheeks</strong><p>Flush 01<br>Liquid Blush</p></div></li>
-        <li><span>03</span><div><strong>Eyes</strong><p>Obsidian<br>Precision Liner</p></div></li>
-        <li><span>04</span><div><strong>Lips</strong><p>Glass 01<br>Lip Oil</p></div></li>
-      </ol>
-      <a href="#" class="shop-look-link">Shop the look <span aria-hidden="true">&rarr;</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="brand-principles" aria-label="Lumiere Beauty principles">
-  <div class="principles-inner">
-    <article class="principle-item">
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.15" aria-hidden="true">
-        <path d="M16 3 5 12l11 17 11-17L16 3Z"/>
-        <path d="M5 12h22M11.5 3 9 12l7 17 7-17-2.5-9"/>
-      </svg>
-      <h2>Performance</h2>
-      <p class="principle-lead">Beauty that lasts beyond the mirror.</p>
-      <p>Formulas engineered for wear,<br>comfort and effortless application.</p>
-    </article>
-
-    <article class="principle-item">
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.15" aria-hidden="true">
-        <path d="M16 3c4.6 6.4 8 11.1 8 16a8 8 0 0 1-16 0c0-4.9 3.4-9.6 8-16Z"/>
-        <path d="M11.5 21.5c.8 2.1 2.3 3.2 4.5 3.5"/>
-      </svg>
-      <h2>Skin</h2>
-      <p class="principle-lead">Makeup should work with your skin.</p>
-      <p>Lightweight textures designed to<br>enhance rather than conceal.</p>
-    </article>
-
-    <article class="principle-item">
-      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.15" aria-hidden="true">
-        <path d="M16 2.5c.3 7.7 3.8 11.2 11.5 11.5C19.8 14.3 16.3 17.8 16 25.5 15.7 17.8 12.2 14.3 4.5 14 12.2 13.7 15.7 10.2 16 2.5Z"/>
-        <path d="M24.5 20c.1 3.1 1.4 4.4 4.5 4.5-3.1.1-4.4 1.4-4.5 4.5-.1-3.1-1.4-4.4-4.5-4.5 3.1-.1 4.4-1.4 4.5-4.5Z"/>
-      </svg>
-      <h2>Intention</h2>
-      <p class="principle-lead">Nothing without purpose.</p>
-      <p>Every product is created with care,<br>quality and intention.</p>
-    </article>
-  </div>
-</section>
-
-<section class="magazine-intro" aria-labelledby="magazine-title">
-  <div class="magazine-copy">
-    <p class="magazine-kicker">Lumi&egrave;re Magazine</p>
-    <h2 id="magazine-title">Stories that<br>inspire. <em>Always.</em></h2>
-    <p class="magazine-description">Each issue of LUMI&Egrave;RE Magazine is a new chapter of beauty, identity, and self-expression.</p>
-    <a href="#" class="magazine-cta">Explore all issues <span aria-hidden="true">&rarr;</span></a>
-  </div>
-
-  <div class="magazine-covers" aria-label="Selected Lumiere Magazine covers">
-    <figure class="magazine-cover magazine-cover-5">
-      <img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_01_17 PM.png" alt="Lumiere Magazine After Dark issue">
-    </figure>
-    <figure class="magazine-cover magazine-cover-4">
-      <img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 06_34_00 PM.png" alt="Lumiere Magazine Element issue">
-    </figure>
-    <figure class="magazine-cover magazine-cover-3">
-      <img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_12_21 PM (1).png" alt="Lumiere Magazine red roses issue">
-    </figure>
-    <figure class="magazine-cover magazine-cover-2">
-      <img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 02_19_49 PM.png" alt="Lumiere Magazine group portrait issue">
-    </figure>
-    <figure class="magazine-cover magazine-cover-1">
-      <img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 02_19_54 PM.png" alt="Lumiere Magazine Reveal What's Yours issue">
-    </figure>
-  </div>
-</section>
-
-<section class="magazine-collection" aria-labelledby="collection-title">
-  <div class="collection-heading">
-    <span aria-hidden="true"></span>
-    <h2 id="collection-title">The Collection</h2>
-    <span aria-hidden="true"></span>
-  </div>
-
-  <div class="collection-carousel">
-    <button class="collection-arrow collection-prev" type="button" aria-label="Previous magazine issues">
-      <span aria-hidden="true">&lsaquo;</span>
-    </button>
-
-    <div class="collection-track" id="collectionTrack" tabindex="0" aria-label="Lumiere Magazine issues">
-      <article class="issue-card">
-        <a href="#" class="issue-cover"><img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 02_19_54 PM.png" alt="Lumiere Magazine Issue 01 Reveal cover"></a>
-        <div class="issue-copy"><p>Issue 01</p><h3>Reveal</h3><span>What&rsquo;s Yours.</span></div>
-      </article>
-      <article class="issue-card">
-        <a href="#" class="issue-cover"><img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_12_21 PM (1).png" alt="Lumiere Magazine Issue 02 Bloom cover"></a>
-        <div class="issue-copy"><p>Issue 02</p><h3>Bloom</h3><span>Beauty in Full Bloom.</span></div>
-      </article>
-      <article class="issue-card">
-        <a href="#" class="issue-cover"><img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_01_17 PM.png" alt="Lumiere Magazine Issue 03 After Dark cover"></a>
-        <div class="issue-copy"><p>Issue 03</p><h3>After Dark</h3><span>Beauty Becomes<br>Something Else.</span></div>
-      </article>
-      <article class="issue-card">
-        <a href="#" class="issue-cover"><img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 06_34_00 PM.png" alt="Lumiere Magazine Issue 04 Element cover"></a>
-        <div class="issue-copy"><p>Issue 04</p><h3>Element</h3><span>Nothing Excess.<br>Everything Intentional.</span></div>
-      </article>
-      <article class="issue-card">
-        <a href="#" class="issue-cover"><img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_21_51 PM.png" alt="Lumiere Magazine Issue 05 Nocturne cover"></a>
-        <div class="issue-copy"><p>Issue 05</p><h3>Nocturne</h3><span>Beauty Has<br>No Uniform.</span></div>
-      </article>
-      <article class="issue-card">
-        <a href="#" class="issue-cover"><img src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_28_49 PM.png" alt="Lumiere Magazine Issue 06 The Finale cover"></a>
-        <div class="issue-copy"><p>Issue 06</p><h3>The Finale</h3><span>All Beauty.<br>All People. All You.</span></div>
-      </article>
-    </div>
-
-    <button class="collection-arrow collection-next" type="button" aria-label="Next magazine issues">
-      <span aria-hidden="true">&rsaquo;</span>
-    </button>
-  </div>
-
-  <a href="#" class="collection-cta">View the full collection <span aria-hidden="true">&rarr;</span></a>
-</section>
-
-<section class="editorial-slideshow" aria-labelledby="slideshow-title">
-  <div class="slideshow-frame">
-    <img
-      class="slideshow-image"
-      id="slideshowImage"
-      src="assets/photoshoot/reveal/reveal-01.png"
-      alt="Lumiere Reveal editorial portrait, close-up view"
+    <nav
+      class="mobile-nav"
+      id="mobileNav"
+      aria-label="Mobile"
+      aria-hidden="true"
     >
-    <div class="slideshow-overlay" aria-hidden="true"></div>
+      <button
+        class="mobile-nav-close"
+        id="mobileNavClose"
+        aria-label="Close menu"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+        >
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+        </svg>
+      </button>
+      <a href="#">ESSENTIALS</a>
+      <a href="#">BESTSELLERS</a>
+      <a href="#">PRODUCTS</a>
+      <a href="#">MAGAZINES</a>
+      <a href="#">GALLERY</a>
+      <a href="#">MODELS</a>
+      <a href="#">CREDITS</a>
+    </nav>
 
-    <div class="slideshow-heading">
-      <p>Editorial Study 01</p>
-      <h2 id="slideshow-title">The Reveal Series</h2>
-    </div>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Bold. Timeless. You.</p>
+          <h1 class="headline">Makeup that<br />moves with <em>you.</em></h1>
+          <p class="subcopy">
+            High performance formulas. Effortless beauty. Made for every moment.
+          </p>
+          <a href="#" class="cta">
+            VIEW PRODUCTS
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <polyline points="14 6 20 12 14 18" />
+            </svg>
+          </a>
+        </div>
 
-    <div class="slideshow-footer">
-      <p class="slideshow-count" aria-live="polite"><span id="currentSlide">01</span> / 04</p>
-      <div class="slideshow-controls">
-        <button type="button" id="slidePrev" aria-label="Show previous image"><span aria-hidden="true">&larr;</span></button>
-        <button type="button" id="slideNext" aria-label="Show next image"><span aria-hidden="true">&rarr;</span></button>
+        <div class="value-props">
+          <div class="value-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.3"
+            >
+              <path d="M12 2 4 9l8 13 8-13-8-7z" />
+              <path d="M4 9h16" />
+              <path d="M9.5 2 8 9l4 13 4-13-1.5-7" />
+            </svg>
+            <div>
+              <p class="value-heading">High performance</p>
+              <p class="value-desc">Clean. Long-lasting.</p>
+            </div>
+          </div>
+          <div class="value-divider"></div>
+          <div class="value-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.3"
+            >
+              <path
+                d="M12 3c3 4.5 6 8 6 11.5A6 6 0 0 1 6 14.5C6 11 9 7.5 12 3z"
+              />
+            </svg>
+            <div>
+              <p class="value-heading">Skin loving</p>
+              <p class="value-desc">Nourishing ingredients.</p>
+            </div>
+          </div>
+          <div class="value-divider"></div>
+          <div class="value-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.3"
+            >
+              <path d="M9 2h6" />
+              <path
+                d="M10 2v6l-5.5 9.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-3.5L14 8V2"
+              />
+              <path d="M7.5 15h9" />
+            </svg>
+            <div>
+              <p class="value-heading">Beauty for all</p>
+              <p class="value-desc">Every shade. Every you.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<script>
-  const header = document.getElementById('siteHeader');
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileNav = document.getElementById('mobileNav');
-  const mobileNavClose = document.getElementById('mobileNavClose');
+    <section class="statement">
+      <div class="statement-inner">
+        <h2 class="statement-heading">
+          Makeup should never<br />hide the person<br />wearing it.
+        </h2>
+        <div class="statement-copy">
+          <p>
+            LUMIÈRE creates high-performance essentials<br />
+            designed to enhance what is already there.<br />
+            Skin that looks like skin.<br />
+            Colour that feels instinctive.<br />
+            Formulas made to move through life with you.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  function onScroll(){
-    if(window.scrollY > 40){
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive:true });
-  onScroll();
+    <section class="essentials" aria-labelledby="essentials-title">
+      <div class="essentials-media" aria-hidden="true">
+        <img src="assets/essentials.png" alt="" />
+      </div>
+      <div class="essentials-shade" aria-hidden="true"></div>
+      <div class="essentials-rule" aria-hidden="true"></div>
 
-  function openMenu(){
-    mobileNav.classList.add('open');
-    mobileNav.setAttribute('aria-hidden','false');
-    menuToggle.setAttribute('aria-expanded','true');
-    document.body.classList.add('nav-open');
-    mobileNavClose.focus();
-  }
-  function closeMenu(){
-    mobileNav.classList.remove('open');
-    mobileNav.setAttribute('aria-hidden','true');
-    menuToggle.setAttribute('aria-expanded','false');
-    document.body.classList.remove('nav-open');
-    menuToggle.focus();
-  }
+      <div class="essentials-content">
+        <p class="essentials-kicker">The Lumi&egrave;re System</p>
+        <h2 id="essentials-title">
+          Six essentials.<br /><em>Infinite expression.</em>
+        </h2>
+        <p class="essentials-note">
+          A considered edit for skin, colour and light&mdash;<br />made to
+          layer, blend and become your own.
+        </p>
+        <a href="#" class="essentials-link">
+          Explore the Essentials
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <polyline points="14 6 20 12 14 18" />
+          </svg>
+        </a>
+      </div>
 
-  menuToggle.addEventListener('click', openMenu);
-  mobileNavClose.addEventListener('click', closeMenu);
-  mobileNav.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape') closeMenu();
-  });
-  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      <p class="essentials-index" aria-hidden="true">06 / ESSENTIALS</p>
+    </section>
 
-  const collectionTrack = document.getElementById('collectionTrack');
-  const collectionPrev = document.querySelector('.collection-prev');
-  const collectionNext = document.querySelector('.collection-next');
+    <section class="essential-edit" aria-labelledby="essential-edit-title">
+      <div class="essential-edit-heading">
+        <p class="essential-edit-kicker">The Essentials</p>
+        <h2 id="essential-edit-title">
+          Everything you need. <em>Nothing you don&rsquo;t.</em>
+        </h2>
+      </div>
 
-  function scrollCollection(direction){
-    const card = collectionTrack.querySelector('.issue-card');
-    const gap = parseFloat(getComputedStyle(collectionTrack).gap) || 0;
-    collectionTrack.scrollBy({ left: direction * (card.offsetWidth + gap), behavior: 'smooth' });
-  }
+      <div class="essential-grid">
+        <article class="essential-card">
+          <p class="essential-number">01</p>
+          <a
+            href="#"
+            class="essential-image"
+            aria-label="Discover Skin Veil serum foundation"
+          >
+            <img
+              src="assets/essentials/lumiere-skin-veil-foundation.png"
+              alt="Lumiere Skin Veil serum foundation"
+            />
+          </a>
+          <div class="essential-card-copy">
+            <h3>Skin Veil</h3>
+            <p>Serum Foundation<br />R620</p>
+            <a href="#" class="essential-discover"
+              >Discover <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </article>
 
-  collectionPrev.addEventListener('click', () => scrollCollection(-1));
-  collectionNext.addEventListener('click', () => scrollCollection(1));
+        <article class="essential-card">
+          <p class="essential-number">02</p>
+          <a
+            href="#"
+            class="essential-image"
+            aria-label="Discover Glass lip oil"
+          >
+            <img
+              src="assets/essentials/lumiere-glass-lip-oil.png"
+              alt="Lumiere Glass lip oil"
+            />
+          </a>
+          <div class="essential-card-copy">
+            <h3>Glass</h3>
+            <p>Lip Oil<br />R340</p>
+            <a href="#" class="essential-discover"
+              >Discover <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </article>
 
-  const slideshow = document.querySelector('.editorial-slideshow');
-  const slideshowImage = document.getElementById('slideshowImage');
-  const currentSlide = document.getElementById('currentSlide');
-  const slidePrev = document.getElementById('slidePrev');
-  const slideNext = document.getElementById('slideNext');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const slides = [
-    { src: 'assets/photoshoot/reveal/reveal-01.png', alt: 'Lumiere Reveal editorial portrait, close-up view' },
-    { src: 'assets/photoshoot/reveal/reveal-02.png', alt: 'Lumiere Reveal editorial portrait, three-quarter view' },
-    { src: 'assets/photoshoot/reveal/reveal-03.png', alt: 'Lumiere Reveal editorial portrait, waist-up view' },
-    { src: 'assets/photoshoot/reveal/reveal-04.png', alt: 'Lumiere Reveal editorial portrait, side profile' }
-  ];
-  let slideIndex = 0;
-  let slideTimer;
-  let isTransitioning = false;
+        <article class="essential-card">
+          <p class="essential-number">03</p>
+          <a
+            href="#"
+            class="essential-image"
+            aria-label="Discover Flush liquid blush"
+          >
+            <img
+              src="assets/essentials/lumiere-flush-liquid-blush.png"
+              alt="Lumiere Flush liquid blush"
+            />
+          </a>
+          <div class="essential-card-copy">
+            <h3>Flush</h3>
+            <p>Liquid Blush<br />R300</p>
+            <a href="#" class="essential-discover"
+              >Discover <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </article>
 
-  slides.forEach(slide => {
-    const image = new Image();
-    image.src = slide.src;
-  });
+        <article class="essential-card">
+          <p class="essential-number">04</p>
+          <a
+            href="#"
+            class="essential-image"
+            aria-label="Discover Sculpt contour stick"
+          >
+            <img
+              src="assets/essentials/lumiere-sculpt-contour-stick.png"
+              alt="Lumiere Sculpt contour stick"
+            />
+          </a>
+          <div class="essential-card-copy">
+            <h3>Sculpt</h3>
+            <p>Contour Stick<br />R420</p>
+            <a href="#" class="essential-discover"
+              >Discover <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </article>
 
-  function scheduleSlideshow(){
-    clearTimeout(slideTimer);
-    slideTimer = setTimeout(() => changeSlide(1), 5200);
-  }
+        <article class="essential-card">
+          <p class="essential-number">05</p>
+          <a
+            href="#"
+            class="essential-image"
+            aria-label="Discover Obsidian eye collection"
+          >
+            <img
+              src="assets/essentials/lumiere-obsidian-precision-liner.png"
+              alt="Lumiere Obsidian precision liner"
+            />
+          </a>
+          <div class="essential-card-copy">
+            <h3>Obsidian</h3>
+            <p>Eye Collection<br />R320</p>
+            <a href="#" class="essential-discover"
+              >Discover <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </article>
 
-  function changeSlide(direction){
-    if(isTransitioning) return;
-    isTransitioning = true;
+        <article class="essential-card">
+          <p class="essential-number">06</p>
+          <a
+            href="#"
+            class="essential-image"
+            aria-label="Discover Afterglow setting mist"
+          >
+            <img
+              src="assets/essentials/lumiere-afterglow-setting-mist.png"
+              alt="Lumiere Afterglow setting mist"
+            />
+          </a>
+          <div class="essential-card-copy">
+            <h3>Afterglow</h3>
+            <p>Setting Mist<br />R390</p>
+            <a href="#" class="essential-discover"
+              >Discover <span aria-hidden="true">&rarr;</span></a
+            >
+          </div>
+        </article>
+      </div>
+    </section>
 
-    if(reduceMotion.matches){
-      slideIndex = (slideIndex + direction + slides.length) % slides.length;
-      slideshowImage.src = slides[slideIndex].src;
-      slideshowImage.alt = slides[slideIndex].alt;
-      currentSlide.textContent = String(slideIndex + 1).padStart(2, '0');
-      isTransitioning = false;
+    <section class="most-wanted" aria-labelledby="most-wanted-title">
+      <div class="most-wanted-header">
+        <h2 id="most-wanted-title">Most Wanted</h2>
+        <a href="#" class="most-wanted-all"
+          >View all bestsellers <span aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+
+      <div class="bestseller-grid">
+        <article class="bestseller-card">
+          <a
+            href="#"
+            class="bestseller-image"
+            aria-label="View Glass 01 lip oil"
+          >
+            <img
+              src="assets/essentials/lumiere-glass-lip-oil.png"
+              alt="Lumiere Glass 01 lip oil in Blood Cherry"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Glass 01</h3>
+              <p class="bestseller-variant">Blood Cherry<br />Lip Oil</p>
+              <p class="bestseller-price">R340</p>
+              <div class="shade-list" aria-label="Available shades">
+                <span
+                  class="shade active"
+                  style="--shade: #a31527"
+                  title="Blood Cherry"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #be313f"
+                  title="Crimson"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #8e2632"
+                  title="Merlot"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #d56b72"
+                  title="Rose"
+                ></span>
+                <span class="shade" style="--shade: #b56169" title="Fig"></span>
+              </div>
+            </div>
+            <button class="bag-button" type="button">More Info</button>
+          </div>
+        </article>
+
+        <article class="bestseller-card">
+          <a
+            href="#"
+            class="bestseller-image"
+            aria-label="View Skin Veil serum foundation"
+          >
+            <img
+              src="assets/essentials/lumiere-skin-veil-foundation.png"
+              alt="Lumiere Skin Veil serum foundation"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Skin Veil</h3>
+              <p class="bestseller-variant">Serum Foundation</p>
+              <p class="bestseller-price">R620</p>
+              <div class="shade-list" aria-label="Available shades">
+                <span
+                  class="shade active"
+                  style="--shade: #e4aa77"
+                  title="Light Warm"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #cb8e61"
+                  title="Medium Warm"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #ae7048"
+                  title="Tan Neutral"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #8d5438"
+                  title="Deep Warm"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #6e3f2e"
+                  title="Rich Neutral"
+                ></span>
+              </div>
+            </div>
+            <button class="bag-button" type="button">More Info</button>
+          </div>
+        </article>
+
+        <article class="bestseller-card">
+          <a
+            href="#"
+            class="bestseller-image"
+            aria-label="View Afterglow setting mist"
+          >
+            <img
+              src="assets/essentials/lumiere-afterglow-setting-mist.png"
+              alt="Lumiere Afterglow setting mist"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Afterglow</h3>
+              <p class="bestseller-variant">Setting Mist</p>
+              <p class="bestseller-price">R390</p>
+            </div>
+            <button class="bag-button" type="button">More Info</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="get-look" aria-labelledby="get-look-title">
+      <div class="featured-product">
+        <div class="featured-copy">
+          <p class="featured-kicker">Featured</p>
+          <h2>Skin Veil</h2>
+          <p class="featured-tagline">Skin, uninterrupted.</p>
+          <p class="featured-description">
+            A lightweight serum foundation that blends seamlessly, hydrates
+            deeply and moves naturally with your skin.
+          </p>
+
+          <div class="featured-benefits" aria-label="Product benefits">
+            <div>
+              <span aria-hidden="true">◇</span>
+              <p>Buildable<br />coverage</p>
+            </div>
+            <div>
+              <span aria-hidden="true">◯</span>
+              <p>Skin-like<br />finish</p>
+            </div>
+            <div>
+              <span aria-hidden="true">△</span>
+              <p>24H<br />hydration</p>
+            </div>
+          </div>
+
+          <a href="#" class="featured-link"
+            >Explore Skin Veil <span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
+
+        <div class="featured-product-image">
+          <img
+            src="assets/essentials/lumiere-skin-veil-foundation.png"
+            alt="Lumiere Skin Veil serum foundation"
+          />
+        </div>
+      </div>
+
+      <div class="look-story">
+        <img
+          class="look-story-image"
+          src="assets/skin-veil-campaign.png"
+          alt="Lumiere Skin Veil beauty look with luminous skin and wet-look hair"
+        />
+        <div class="look-story-shade" aria-hidden="true"></div>
+        <div class="look-story-content">
+          <h2 id="get-look-title">Get the Look</h2>
+          <ol class="look-routine">
+            <li>
+              <span>01</span>
+              <div>
+                <strong>Skin</strong>
+                <p>Skin Veil<br />Serum Foundation</p>
+              </div>
+            </li>
+            <li>
+              <span>02</span>
+              <div>
+                <strong>Cheeks</strong>
+                <p>Flush 01<br />Liquid Blush</p>
+              </div>
+            </li>
+            <li>
+              <span>03</span>
+              <div>
+                <strong>Eyes</strong>
+                <p>Obsidian<br />Precision Liner</p>
+              </div>
+            </li>
+            <li>
+              <span>04</span>
+              <div>
+                <strong>Lips</strong>
+                <p>Glass 01<br />Lip Oil</p>
+              </div>
+            </li>
+          </ol>
+          <a href="#" class="shop-look-link"
+            >Shop the look <span aria-hidden="true">&rarr;</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-principles" aria-label="Lumiere Beauty principles">
+      <div class="principles-inner">
+        <article class="principle-item">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.15"
+            aria-hidden="true"
+          >
+            <path d="M16 3 5 12l11 17 11-17L16 3Z" />
+            <path d="M5 12h22M11.5 3 9 12l7 17 7-17-2.5-9" />
+          </svg>
+          <h2>Performance</h2>
+          <p class="principle-lead">Beauty that lasts beyond the mirror.</p>
+          <p>
+            Formulas engineered for wear,<br />comfort and effortless
+            application.
+          </p>
+        </article>
+
+        <article class="principle-item">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.15"
+            aria-hidden="true"
+          >
+            <path
+              d="M16 3c4.6 6.4 8 11.1 8 16a8 8 0 0 1-16 0c0-4.9 3.4-9.6 8-16Z"
+            />
+            <path d="M11.5 21.5c.8 2.1 2.3 3.2 4.5 3.5" />
+          </svg>
+          <h2>Skin</h2>
+          <p class="principle-lead">Makeup should work with your skin.</p>
+          <p>
+            Lightweight textures designed to<br />enhance rather than conceal.
+          </p>
+        </article>
+
+        <article class="principle-item">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.15"
+            aria-hidden="true"
+          >
+            <path
+              d="M16 2.5c.3 7.7 3.8 11.2 11.5 11.5C19.8 14.3 16.3 17.8 16 25.5 15.7 17.8 12.2 14.3 4.5 14 12.2 13.7 15.7 10.2 16 2.5Z"
+            />
+            <path
+              d="M24.5 20c.1 3.1 1.4 4.4 4.5 4.5-3.1.1-4.4 1.4-4.5 4.5-.1-3.1-1.4-4.4-4.5-4.5 3.1-.1 4.4-1.4 4.5-4.5Z"
+            />
+          </svg>
+          <h2>Intention</h2>
+          <p class="principle-lead">Nothing without purpose.</p>
+          <p>Every product is created with care,<br />quality and intention.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="magazine-intro" aria-labelledby="magazine-title">
+      <div class="magazine-copy">
+        <p class="magazine-kicker">Lumi&egrave;re Magazine</p>
+        <h2 id="magazine-title">Stories that<br />inspire. <em>Always.</em></h2>
+        <p class="magazine-description">
+          Each issue of LUMI&Egrave;RE Magazine is a new chapter of beauty,
+          identity, and self-expression.
+        </p>
+        <a href="#" class="magazine-cta"
+          >Explore all issues <span aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+
+      <div
+        class="magazine-covers"
+        aria-label="Selected Lumiere Magazine covers"
+      >
+        <figure class="magazine-cover magazine-cover-5">
+          <img
+            src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_01_17 PM.png"
+            alt="Lumiere Magazine After Dark issue"
+          />
+        </figure>
+        <figure class="magazine-cover magazine-cover-4">
+          <img
+            src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 06_34_00 PM.png"
+            alt="Lumiere Magazine Element issue"
+          />
+        </figure>
+        <figure class="magazine-cover magazine-cover-3">
+          <img
+            src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_12_21 PM (1).png"
+            alt="Lumiere Magazine red roses issue"
+          />
+        </figure>
+        <figure class="magazine-cover magazine-cover-2">
+          <img
+            src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 02_19_49 PM.png"
+            alt="Lumiere Magazine group portrait issue"
+          />
+        </figure>
+        <figure class="magazine-cover magazine-cover-1">
+          <img
+            src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 02_19_54 PM.png"
+            alt="Lumiere Magazine Reveal What's Yours issue"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="magazine-collection" aria-labelledby="collection-title">
+      <div class="collection-heading">
+        <span aria-hidden="true"></span>
+        <h2 id="collection-title">The Collection</h2>
+        <span aria-hidden="true"></span>
+      </div>
+
+      <div class="collection-carousel">
+        <!-- <button
+          class="collection-arrow collection-prev"
+          type="button"
+          aria-label="Previous magazine issues"
+        >
+          <span aria-hidden="true">&lsaquo;</span>
+        </button> -->
+
+        <div
+          class="collection-track"
+          id="collectionTrack"
+          tabindex="0"
+          aria-label="Lumiere Magazine issues"
+        >
+          <article class="issue-card">
+            <a href="#" class="issue-cover"
+              ><img
+                src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 02_19_54 PM.png"
+                alt="Lumiere Magazine Issue 01 Reveal cover"
+            /></a>
+            <div class="issue-copy">
+              <p>Issue 01</p>
+              <h3>Reveal</h3>
+              <span>What&rsquo;s Yours.</span>
+            </div>
+          </article>
+          <article class="issue-card">
+            <a href="#" class="issue-cover"
+              ><img
+                src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_12_21 PM (1).png"
+                alt="Lumiere Magazine Issue 02 Bloom cover"
+            /></a>
+            <div class="issue-copy">
+              <p>Issue 02</p>
+              <h3>Bloom</h3>
+              <span>Beauty in Full Bloom.</span>
+            </div>
+          </article>
+          <article class="issue-card">
+            <a href="#" class="issue-cover"
+              ><img
+                src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_01_17 PM.png"
+                alt="Lumiere Magazine Issue 03 After Dark cover"
+            /></a>
+            <div class="issue-copy">
+              <p>Issue 03</p>
+              <h3>After Dark</h3>
+              <span>Beauty Becomes<br />Something Else.</span>
+            </div>
+          </article>
+          <article class="issue-card">
+            <a href="#" class="issue-cover"
+              ><img
+                src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 06_34_00 PM.png"
+                alt="Lumiere Magazine Issue 04 Element cover"
+            /></a>
+            <div class="issue-copy">
+              <p>Issue 04</p>
+              <h3>Element</h3>
+              <span>Nothing Excess.<br />Everything Intentional.</span>
+            </div>
+          </article>
+          <article class="issue-card">
+            <a href="#" class="issue-cover"
+              ><img
+                src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_21_51 PM.png"
+                alt="Lumiere Magazine Issue 05 Nocturne cover"
+            /></a>
+            <div class="issue-copy">
+              <p>Issue 05</p>
+              <h3>Nocturne</h3>
+              <span>Beauty Has<br />No Uniform.</span>
+            </div>
+          </article>
+          <article class="issue-card">
+            <a href="#" class="issue-cover"
+              ><img
+                src="assets/magazine_covers/ChatGPT Image Jul 22, 2026, 04_28_49 PM.png"
+                alt="Lumiere Magazine Issue 06 The Finale cover"
+            /></a>
+            <div class="issue-copy">
+              <p>Issue 06</p>
+              <h3>The Finale</h3>
+              <span>All Beauty.<br />All People. All You.</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- <button
+          class="collection-arrow collection-next"
+          type="button"
+          aria-label="Next magazine issues"
+        >
+          <span aria-hidden="true">&rsaquo;</span>
+        </button> -->
+      </div>
+
+      <a href="#" class="collection-cta"
+        >View the full collection <span aria-hidden="true">&rarr;</span></a
+      >
+    </section>
+
+    <section class="photoshoot-showcase" aria-labelledby="showcase-title">
+      <header class="showcase-intro">
+        <p>Photo Shoot Showcase</p>
+        <h2 id="showcase-title">
+          Every look. Every moment. <em>Unfiltered.</em>
+        </h2>
+        <span
+          >Behind the lens of Lumi&egrave;re. Discover the story, the details,
+          the attitude.</span
+        >
+      </header>
+
+      <div class="showcase-stage">
+        <img
+          class="showcase-image"
+          id="showcaseImage"
+          src="assets/photoshoot/reveal/reveal-01.png"
+          alt="Reveal photoshoot beauty portrait"
+        />
+        <div class="showcase-shade" aria-hidden="true"></div>
+
+        <p class="showcase-category" id="showcaseCategory" aria-live="polite">
+          Reveal
+        </p>
+
+        <button
+          class="showcase-arrow showcase-prev"
+          type="button"
+          id="showcasePrev"
+          aria-label="Show previous photoshoot"
+        >
+          <span aria-hidden="true">&larr;</span>
+        </button>
+        <button
+          class="showcase-arrow showcase-next"
+          type="button"
+          id="showcaseNext"
+          aria-label="Show next photoshoot"
+        >
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+
+        <a href="#" class="showcase-cta"
+          >View full photoshoot <span aria-hidden="true">&rarr;</span></a
+        >
+
+        <div
+          class="showcase-pagination"
+          aria-label="Choose photoshoot category"
+        >
+          <button
+            class="active"
+            type="button"
+            data-slide="0"
+            aria-label="Show Reveal photoshoot"
+          >
+            01
+          </button>
+          <button
+            type="button"
+            data-slide="1"
+            aria-label="Show Bloom photoshoot"
+          >
+            02
+          </button>
+          <button
+            type="button"
+            data-slide="2"
+            aria-label="Show After Dark photoshoot"
+          >
+            03
+          </button>
+          <button
+            type="button"
+            data-slide="3"
+            aria-label="Show Element photoshoot"
+          >
+            04
+          </button>
+          <button
+            type="button"
+            data-slide="4"
+            aria-label="Show Nocturne photoshoot"
+          >
+            05
+          </button>
+          <button
+            type="button"
+            data-slide="5"
+            aria-label="Show The Finale photoshoot"
+          >
+            06
+          </button>
+          <button
+            type="button"
+            data-slide="6"
+            aria-label="Show The New Standard photoshoot"
+          >
+            07
+          </button>
+        </div>
+      </div>
+
+      <footer class="showcase-signoff">
+        <p>Lumi&egrave;re Through Our Lens</p>
+        <span>Real Beauty. Real Stories.</span>
+      </footer>
+    </section>
+
+    <section class="journal-preview" aria-labelledby="journal-title">
+      <div class="journal-intro">
+        <p class="journal-kicker">Beyond the Cover</p>
+        <h2 id="journal-title">More than images.<br />More than beauty.</h2>
+        <p class="journal-description">
+          Interviews, editorials, behind the scenes and stories from those who
+          redefine what beauty means today.
+        </p>
+        <a href="#" class="journal-main-link"
+          >Read the journal <span aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+
+      <div class="journal-grid">
+        <article class="journal-card">
+          <a
+            href="#"
+            class="journal-image"
+            aria-label="Read Redefining Beauty on Our Own Terms"
+          >
+            <img
+              src="assets/photoshoot/reveal/reveal-02.png"
+              alt="Lumiere beauty portrait from the Reveal photoshoot"
+            />
+          </a>
+          <div class="journal-card-body">
+            <p>Interview</p>
+            <h3>Redefining Beauty<br />on Our Own Terms</h3>
+            <a href="#">Read more <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="journal-card">
+          <a
+            href="#"
+            class="journal-image"
+            aria-label="Read The After Dark Experience"
+          >
+            <img
+              src="assets/photoshoot/after-dark/after-dark-2.png"
+              alt="After Dark editorial photographed outside a Gothic cathedral"
+            />
+          </a>
+          <div class="journal-card-body">
+            <p>Editorial</p>
+            <h3>The After Dark<br />Experience</h3>
+            <a href="#">Read more <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+
+        <article class="journal-card">
+          <a
+            href="#"
+            class="journal-image"
+            aria-label="Read Crafting Every Detail"
+          >
+            <img
+              src="assets/essentials.png"
+              alt="Lumiere Beauty essentials arranged on a crimson studio set"
+            />
+          </a>
+          <div class="journal-card-body">
+            <p>Behind the Scenes</p>
+            <h3>Crafting Every<br />Detail</h3>
+            <a href="#">Read more <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="world-invite" aria-label="Join the world of Lumiere">
+      <div class="world-quote">
+        <div class="world-quote-image" aria-hidden="true"></div>
+        <blockquote>
+          <p>&ldquo;Beauty isn&rsquo;t<br />something you put on.&rdquo;</p>
+        </blockquote>
+        <div class="world-quote-signature">
+          <p>It&rsquo;s something you reveal.</p>
+          <span>&mdash; Lumi&egrave;re</span>
+        </div>
+      </div>
+
+      <div class="world-newsletter">
+        <div class="newsletter-text">
+          <h2>Enter the World of Lumi&egrave;re</h2>
+          <p>Private access to new collections,<br />campaigns and launches.</p>
+        </div>
+
+        <form class="newsletter-form" action="#" method="post">
+          <label class="sr-only" for="newsletterEmail"
+            >Your email address</label
+          >
+          <input
+            id="newsletterEmail"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="YOUR EMAIL ADDRESS"
+            required
+          />
+          <button type="submit">Join</button>
+        </form>
+
+        <div class="newsletter-art" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a href="#" class="footer-brand" aria-label="Lumiere Beauty home"
+          >Lumi&egrave;re</a
+        >
+
+        <nav class="footer-column" aria-label="Magazine links">
+          <h2>Magazine</h2>
+          <a href="#">All Issues</a>
+          <a href="#">Journal</a>
+          <a href="#">Submissions</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Explore links">
+          <h2>Explore</h2>
+          <a href="#">Products</a>
+          <a href="#">Models</a>
+          <a href="#">About</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Support links">
+          <h2>Support</h2>
+          <a href="#">FAQs</a>
+          <a href="#">Contact</a>
+          <a href="#">Shipping</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Legal links">
+          <h2>Legal</h2>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </nav>
+
+        <div class="footer-socials" aria-label="Social media">
+          <a href="#" aria-label="Instagram">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r=".8"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              aria-hidden="true"
+            >
+              <path d="M14 4v10.2a4.4 4.4 0 1 1-3.5-4.3" />
+              <path d="M14 4c.8 2.5 2.3 3.8 5 4" />
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                d="M21 12c0 3.7-.5 5.6-1 6.2-.8.8-4.4.8-8 .8s-7.2 0-8-.8C3.5 17.6 3 15.7 3 12s.5-5.6 1-6.2C4.8 5 8.4 5 12 5s7.2 0 8 .8c.5.6 1 2.5 1 6.2Z"
+              />
+              <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path
+                d="M9.5 20c.6-2.1 1.1-4.2 1.6-6.4-.9-1.8.1-5.2 2.5-5.2 1.5 0 2.2 1.1 2.2 2.5 0 2-1.3 4.9-3.2 4.9-1 0-1.7-.9-1.5-2"
+              />
+              <path d="M7.4 16.5A6.2 6.2 0 1 1 18 17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumi&egrave;re Beauty. All rights reserved.</p>
+        <p>Lumi&egrave;re is You.</p>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById("siteHeader");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      const mobileNavClose = document.getElementById("mobileNavClose");
+
+      function onScroll() {
+        if (window.scrollY > 40) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      function openMenu() {
+        mobileNav.classList.add("open");
+        mobileNav.setAttribute("aria-hidden", "false");
+        menuToggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("nav-open");
+        mobileNavClose.focus();
+      }
+      function closeMenu() {
+        mobileNav.classList.remove("open");
+        mobileNav.setAttribute("aria-hidden", "true");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("nav-open");
+        menuToggle.focus();
+      }
+
+      menuToggle.addEventListener("click", openMenu);
+      mobileNavClose.addEventListener("click", closeMenu);
+      mobileNav.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+      mobileNav
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", closeMenu));
+
+      const collectionTrack = document.getElementById("collectionTrack");
+      const collectionPrev = document.querySelector(".collection-prev");
+      const collectionNext = document.querySelector(".collection-next");
+
+      function scrollCollection(direction) {
+        const card = collectionTrack.querySelector(".issue-card");
+        const gap = parseFloat(getComputedStyle(collectionTrack).gap) || 0;
+        collectionTrack.scrollBy({
+          left: direction * (card.offsetWidth + gap),
+          behavior: "smooth",
+        });
+      }
+
+      collectionPrev.addEventListener("click", () => scrollCollection(-1));
+      collectionNext.addEventListener("click", () => scrollCollection(1));
+
+      const showcase = document.querySelector(".photoshoot-showcase");
+      const showcaseImage = document.getElementById("showcaseImage");
+      const showcaseCategory = document.getElementById("showcaseCategory");
+      const showcasePrev = document.getElementById("showcasePrev");
+      const showcaseNext = document.getElementById("showcaseNext");
+      const showcasePagination = [
+        ...document.querySelectorAll(".showcase-pagination button"),
+      ];
+      const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      );
+      const slides = [
+        {
+          src: "assets/photoshoot/reveal/reveal-01.png",
+          alt: "Reveal photoshoot beauty portrait",
+          category: "Reveal",
+        },
+        {
+          src: "assets/photoshoot/bloom/bloom-1.png",
+          alt: "Bloom photoshoot portrait among red roses",
+          category: "Bloom",
+        },
+        {
+          src: "assets/photoshoot/after-dark/after-dark-1.png",
+          alt: "After Dark fashion photoshoot outside a cathedral",
+          category: "After Dark",
+        },
+        {
+          src: "assets/photoshoot/element/element-1.png",
+          alt: "Element photoshoot in a desert landscape",
+          category: "Element",
+        },
+        {
+          src: "assets/photoshoot/nocturne/nocturne-1.png",
+          alt: "Nocturne fashion photoshoot overlooking the city",
+          category: "Nocturne",
+        },
+        {
+          src: "assets/photoshoot/finale/finale-1.png",
+          alt: "The Finale ensemble fashion photoshoot",
+          category: "The Finale",
+        },
+        {
+          src: "assets/photoshoot/the-new-standard/the-new-standard-1.png",
+          alt: "The New Standard beauty ensemble photoshoot",
+          category: "The New Standard",
+        },
+      ];
+      let slideIndex = 0;
+      let slideTimer;
+      let isTransitioning = false;
+
+      slides.forEach((slide) => {
+        const image = new Image();
+        image.src = slide.src;
+      });
+
+      function scheduleSlideshow() {
+        clearTimeout(slideTimer);
+        slideTimer = setTimeout(() => changeSlide(1), 5200);
+      }
+
+      function updateShowcase() {
+        showcaseImage.src = slides[slideIndex].src;
+        showcaseImage.alt = slides[slideIndex].alt;
+        showcaseCategory.textContent = slides[slideIndex].category;
+        showcasePagination.forEach((button, index) => {
+          button.classList.toggle("active", index === slideIndex);
+          button.setAttribute(
+            "aria-current",
+            index === slideIndex ? "true" : "false",
+          );
+        });
+      }
+
+      function changeSlide(direction, targetIndex = null) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        if (reduceMotion.matches) {
+          slideIndex =
+            targetIndex === null
+              ? (slideIndex + direction + slides.length) % slides.length
+              : targetIndex;
+          updateShowcase();
+          isTransitioning = false;
+          scheduleSlideshow();
+          return;
+        }
+
+        showcaseImage.classList.add("is-obscured");
+        setTimeout(() => {
+          slideIndex =
+            targetIndex === null
+              ? (slideIndex + direction + slides.length) % slides.length
+              : targetIndex;
+          updateShowcase();
+
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => {
+              showcaseImage.classList.remove("is-obscured");
+              isTransitioning = false;
+              scheduleSlideshow();
+            }),
+          );
+        }, 900);
+      }
+
+      showcasePrev.addEventListener("click", () => changeSlide(-1));
+      showcaseNext.addEventListener("click", () => changeSlide(1));
+      showcasePagination.forEach((button) =>
+        button.addEventListener("click", () => {
+          const target = Number(button.dataset.slide);
+          if (target !== slideIndex) changeSlide(0, target);
+        }),
+      );
+      showcase.addEventListener("mouseenter", () => clearTimeout(slideTimer));
+      showcase.addEventListener("mouseleave", scheduleSlideshow);
+      showcase.addEventListener("focusin", () => clearTimeout(slideTimer));
+      showcase.addEventListener("focusout", scheduleSlideshow);
+      document.addEventListener("visibilitychange", () =>
+        document.hidden ? clearTimeout(slideTimer) : scheduleSlideshow(),
+      );
       scheduleSlideshow();
-      return;
-    }
-
-    slideshowImage.classList.add('is-obscured');
-    setTimeout(() => {
-      slideIndex = (slideIndex + direction + slides.length) % slides.length;
-      slideshowImage.src = slides[slideIndex].src;
-      slideshowImage.alt = slides[slideIndex].alt;
-      currentSlide.textContent = String(slideIndex + 1).padStart(2, '0');
-
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        slideshowImage.classList.remove('is-obscured');
-        isTransitioning = false;
-        scheduleSlideshow();
-      }));
-    }, 900);
-  }
-
-  slidePrev.addEventListener('click', () => changeSlide(-1));
-  slideNext.addEventListener('click', () => changeSlide(1));
-  slideshow.addEventListener('mouseenter', () => clearTimeout(slideTimer));
-  slideshow.addEventListener('mouseleave', scheduleSlideshow);
-  slideshow.addEventListener('focusin', () => clearTimeout(slideTimer));
-  slideshow.addEventListener('focusout', scheduleSlideshow);
-  document.addEventListener('visibilitychange', () => document.hidden ? clearTimeout(slideTimer) : scheduleSlideshow());
-  scheduleSlideshow();
-</script>
-
-</body>
+    </script>
+  </body>
 </html>
