@@ -1,0 +1,1 @@
+LUMIÈRE BEAUTY is a conceptual luxury beauty brand built around individuality and self-expression. Through high-performance cosmetics, cinematic campaigns, and fashion-inspired editorial storytelling, LUMIÈRE celebrates beauty not as something used to conceal, but as a way to reveal what is already yours.
