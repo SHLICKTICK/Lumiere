@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products — Lumière Beauty</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ---------- Site Header ---------- -->
+    <header class="site-header" id="siteHeader">
+      <div class="logo">
+        <span class="mark">LUMIÈRE</span>
+        <span class="sub">BEAUTY</span>
+      </div>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="essentials.html">ESSENTIALS</a>
+        <a href="bestsellers.html">BESTSELLERS</a>
+        <a href="products.html" aria-current="page">PRODUCTS</a>
+        <a href="magazines.html">MAGAZINES</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="models.html">MODELS</a>
+        <a href="credits.html">CREDITS</a>
+      </nav>
+
+      <div class="header-icons">
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          id="menuToggle"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+          >
+            <line x1="3" y1="7" x2="21" y2="7" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="17" x2="21" y2="17" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ---------- Mobile Navigation ---------- -->
+    <nav
+      class="mobile-nav"
+      id="mobileNav"
+      aria-label="Mobile"
+      aria-hidden="true"
+    >
+      <button
+        class="mobile-nav-close"
+        id="mobileNavClose"
+        aria-label="Close menu"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.4"
+        >
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="18" y1="6" x2="6" y2="18" />
+        </svg>
+      </button>
+      <a href="essentials.html">ESSENTIALS</a>
+      <a href="bestsellers.html">BESTSELLERS</a>
+      <a href="products.html" aria-current="page">PRODUCTS</a>
+      <a href="magazines.html">MAGAZINES</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="models.html">MODELS</a>
+      <a href="credits.html">CREDITS</a>
+    </nav>
+
+    <!-- ---------- Page Hero ---------- -->
+    <section class="essentials" aria-labelledby="products-page-title">
+      <div class="essentials-media" aria-hidden="true">
+        <img src="assets/essentials.png" alt="" />
+      </div>
+      <div class="essentials-shade" aria-hidden="true"></div>
+      <div class="essentials-rule" aria-hidden="true"></div>
+
+      <div class="essentials-content">
+        <p class="essentials-kicker">The Complete Collection</p>
+        <h1 id="products-page-title">
+          All Products.<br /><em>Pure intention.</em>
+        </h1>
+        <p class="essentials-note">
+          Discover high-performance formulas engineered for skin, colour, and light—<br />
+          designed to enhance what is already uniquely yours.
+        </p>
+        <a href="#catalog" class="essentials-link">
+          Browse Products
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <line x1="12" y1="4" x2="12" y2="20" />
+            <polyline points="6 14 12 20 18 14" />
+          </svg>
+        </a>
+      </div>
+
+      <p class="essentials-index" aria-hidden="true">01 / CATALOGUE</p>
+    </section>
+
+    <!-- ---------- Category Filter Nav ---------- -->
+    <nav class="catalog-nav" id="catalog" aria-label="Filter products by category">
+      <a href="#all" class="active"><span>01</span>All Products</a>
+      <a href="#skin"><span>02</span>Skin</a>
+      <a href="#lips"><span>03</span>Lips</a>
+      <a href="#cheeks"><span>04</span>Cheeks</a>
+      <a href="#contour"><span>05</span>Contour</a>
+      <a href="#eyes"><span>06</span>Eyes</a>
+      <a href="#finish"><span>07</span>Finish</a>
+    </nav>
+
+    <!-- ---------- Product Grid Section ---------- -->
+    <section class="most-wanted" aria-labelledby="all-products-title">
+      <div class="most-wanted-header">
+        <h2 id="all-products-title">The Edit</h2>
+        <a href="essentials.html" class="most-wanted-all"
+          >Explore Essentials System <span aria-hidden="true">&rarr;</span></a
+        >
+      </div>
+
+      <div class="bestseller-grid">
+        <!-- Item 01: Skin Veil -->
+        <article class="bestseller-card">
+          <a
+            href="essentials.html#skin-veil"
+            class="bestseller-image"
+            aria-label="View Skin Veil serum foundation"
+          >
+            <img
+              src="assets/essentials/lumiere-skin-veil-foundation.png"
+              alt="Lumiere Skin Veil serum foundation"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Skin Veil</h3>
+              <p class="bestseller-variant">Serum Foundation</p>
+              <p class="bestseller-price">R620</p>
+              <div class="shade-list" aria-label="Available shades">
+                <span
+                  class="shade active"
+                  style="--shade: #e4aa77"
+                  title="Light Warm"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #cb8e61"
+                  title="Medium Warm"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #ae7048"
+                  title="Tan Neutral"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #8d5438"
+                  title="Deep Warm"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #6e3f2e"
+                  title="Rich Neutral"
+                ></span>
+              </div>
+            </div>
+            <button class="bag-button" type="button">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- Item 02: Glass -->
+        <article class="bestseller-card">
+          <a
+            href="essentials.html#glass"
+            class="bestseller-image"
+            aria-label="View Glass lip oil"
+          >
+            <img
+              src="assets/essentials/lumiere-glass-lip-oil.png"
+              alt="Lumiere Glass lip oil"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Glass</h3>
+              <p class="bestseller-variant">Lip Oil</p>
+              <p class="bestseller-price">R340</p>
+              <div class="shade-list" aria-label="Available shades">
+                <span
+                  class="shade active"
+                  style="--shade: #a31527"
+                  title="Blood Cherry"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #be313f"
+                  title="Crimson"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #8e2632"
+                  title="Merlot"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #d56b72"
+                  title="Rose"
+                ></span>
+                <span
+                  class="shade"
+                  style="--shade: #b56169"
+                  title="Fig"
+                ></span>
+              </div>
+            </div>
+            <button class="bag-button" type="button">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- Item 03: Flush -->
+        <article class="bestseller-card">
+          <a
+            href="essentials.html#flush"
+            class="bestseller-image"
+            aria-label="View Flush liquid blush"
+          >
+            <img
+              src="assets/essentials/lumiere-flush-liquid-blush.png"
+              alt="Lumiere Flush liquid blush"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Flush</h3>
+              <p class="bestseller-variant">Liquid Blush</p>
+              <p class="bestseller-price">R300</p>
+            </div>
+            <button class="bag-button" type="button">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- Item 04: Sculpt -->
+        <article class="bestseller-card">
+          <a
+            href="essentials.html#sculpt"
+            class="bestseller-image"
+            aria-label="View Sculpt contour stick"
+          >
+            <img
+              src="assets/essentials/lumiere-sculpt-contour-stick.png"
+              alt="Lumiere Sculpt contour stick"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Sculpt</h3>
+              <p class="bestseller-variant">Contour Stick</p>
+              <p class="bestseller-price">R420</p>
+            </div>
+            <button class="bag-button" type="button">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- Item 05: Obsidian -->
+        <article class="bestseller-card">
+          <a
+            href="essentials.html#obsidian"
+            class="bestseller-image"
+            aria-label="View Obsidian precision liner"
+          >
+            <img
+              src="assets/essentials/lumiere-obsidian-precision-liner.png"
+              alt="Lumiere Obsidian precision liner"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Obsidian</h3>
+              <p class="bestseller-variant">Precision Liner</p>
+              <p class="bestseller-price">R320</p>
+            </div>
+            <button class="bag-button" type="button">Add to Bag</button>
+          </div>
+        </article>
+
+        <!-- Item 06: Afterglow -->
+        <article class="bestseller-card">
+          <a
+            href="essentials.html#afterglow"
+            class="bestseller-image"
+            aria-label="View Afterglow setting mist"
+          >
+            <img
+              src="assets/essentials/lumiere-afterglow-setting-mist.png"
+              alt="Lumiere Afterglow setting mist"
+            />
+          </a>
+          <div class="bestseller-info">
+            <div>
+              <h3>Afterglow</h3>
+              <p class="bestseller-variant">Setting Mist</p>
+              <p class="bestseller-price">R390</p>
+            </div>
+            <button class="bag-button" type="button">Add to Bag</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ---------- Principles ---------- -->
+    <section class="brand-principles" aria-label="Lumiere Beauty principles">
+      <div class="principles-inner">
+        <article class="principle-item">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.15"
+            aria-hidden="true"
+          >
+            <path d="M16 3 5 12l11 17 11-17L16 3Z" />
+            <path d="M5 12h22M11.5 3 9 12l7 17 7-17-2.5-9" />
+          </svg>
+          <h2>Performance</h2>
+          <p class="principle-lead">Beauty that lasts beyond the mirror.</p>
+          <p>
+            Formulas engineered for wear,<br />comfort and effortless
+            application.
+          </p>
+        </article>
+
+        <article class="principle-item">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.15"
+            aria-hidden="true"
+          >
+            <path
+              d="M16 3c4.6 6.4 8 11.1 8 16a8 8 0 0 1-16 0c0-4.9 3.4-9.6 8-16Z"
+            />
+            <path d="M11.5 21.5c.8 2.1 2.3 3.2 4.5 3.5" />
+          </svg>
+          <h2>Skin</h2>
+          <p class="principle-lead">Makeup should work with your skin.</p>
+          <p>
+            Lightweight textures designed to<br />enhance rather than conceal.
+          </p>
+        </article>
+
+        <article class="principle-item">
+          <svg
+            viewBox="0 0 32 32"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.15"
+            aria-hidden="true"
+          >
+            <path
+              d="M16 2.5c.3 7.7 3.8 11.2 11.5 11.5C19.8 14.3 16.3 17.8 16 25.5 15.7 17.8 12.2 14.3 4.5 14 12.2 13.7 15.7 10.2 16 2.5Z"
+            />
+            <path
+              d="M24.5 20c.1 3.1 1.4 4.4 4.5 4.5-3.1.1-4.4 1.4-4.5 4.5-.1-3.1-1.4-4.4-4.5-4.5 3.1-.1 4.4-1.4 4.5-4.5Z"
+            />
+          </svg>
+          <h2>Intention</h2>
+          <p class="principle-lead">Nothing without purpose.</p>
+          <p>Every product is created with care,<br />quality and intention.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ---------- Newsletter ---------- -->
+    <section class="world-invite" aria-label="Join the world of Lumiere">
+      <div class="world-quote">
+        <div class="world-quote-image" aria-hidden="true"></div>
+        <blockquote>
+          <p>&ldquo;Beauty isn&rsquo;t<br />something you put on.&rdquo;</p>
+        </blockquote>
+        <div class="world-quote-signature">
+          <p>It&rsquo;s something you reveal.</p>
+          <span>&mdash; Lumi&egrave;re</span>
+        </div>
+      </div>
+
+      <div class="world-newsletter">
+        <div class="newsletter-text">
+          <h2>Enter the World of Lumi&egrave;re</h2>
+          <p>Private access to new collections,<br />campaigns and launches.</p>
+        </div>
+
+        <form class="newsletter-form" action="#" method="post">
+          <label class="sr-only" for="newsletterEmail"
+            >Your email address</label
+          >
+          <input
+            id="newsletterEmail"
+            name="email"
+            type="email"
+            autocomplete="email"
+            placeholder="YOUR EMAIL ADDRESS"
+            required
+          />
+          <button type="submit">Join</button>
+        </form>
+
+        <div class="newsletter-art" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- ---------- Site Footer ---------- -->
+    <footer class="site-footer">
+      <div class="footer-main">
+        <a href="index.html" class="footer-brand" aria-label="Lumiere Beauty home"
+          >Lumi&egrave;re</a
+        >
+
+        <nav class="footer-column" aria-label="Magazine links">
+          <h2>Magazine</h2>
+          <a href="magazines.html">All Issues</a>
+          <a href="#">Journal</a>
+          <a href="#">Submissions</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Explore links">
+          <h2>Explore</h2>
+          <a href="products.html">Products</a>
+          <a href="models.html">Models</a>
+          <a href="#">About</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Support links">
+          <h2>Support</h2>
+          <a href="#">FAQs</a>
+          <a href="#">Contact</a>
+          <a href="#">Shipping</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Legal links">
+          <h2>Legal</h2>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+        </nav>
+
+        <div class="footer-socials" aria-label="Social media">
+          <a href="#" aria-label="Instagram">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r=".8"
+                fill="currentColor"
+                stroke="none"
+              />
+            </svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              aria-hidden="true"
+            >
+              <path d="M14 4v10.2a4.4 4.4 0 1 1-3.5-4.3" />
+              <path d="M14 4c.8 2.5 2.3 3.8 5 4" />
+            </svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path
+                d="M21 12c0 3.7-.5 5.6-1 6.2-.8.8-4.4.8-8 .8s-7.2 0-8-.8C3.5 17.6 3 15.7 3 12s.5-5.6 1-6.2C4.8 5 8.4 5 12 5s7.2 0 8 .8c.5.6 1 2.5 1 6.2Z"
+              />
+              <path d="m10 9 5 3-5 3V9Z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" aria-label="Pinterest">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path
+                d="M9.5 20c.6-2.1 1.1-4.2 1.6-6.4-.9-1.8.1-5.2 2.5-5.2 1.5 0 2.2 1.1 2.2 2.5 0 2-1.3 4.9-3.2 4.9-1 0-1.7-.9-1.5-2"
+              />
+              <path d="M7.4 16.5A6.2 6.2 0 1 1 18 17" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Lumi&egrave;re Beauty. All rights reserved.</p>
+        <p>Lumi&egrave;re is You.</p>
+      </div>
+    </footer>
+
+    <!-- ---------- Scripts ---------- -->
+    <script>
+      const header = document.getElementById("siteHeader");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      const mobileNavClose = document.getElementById("mobileNavClose");
+
+      function onScroll() {
+        if (window.scrollY > 40) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      function openMenu() {
+        mobileNav.classList.add("open");
+        mobileNav.setAttribute("aria-hidden", "false");
+        menuToggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("nav-open");
+        mobileNavClose.focus();
+      }
+      function closeMenu() {
+        mobileNav.classList.remove("open");
+        mobileNav.setAttribute("aria-hidden", "true");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("nav-open");
+        menuToggle.focus();
+      }
+
+      menuToggle.addEventListener("click", openMenu);
+      mobileNavClose.addEventListener("click", closeMenu);
+      mobileNav.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+      mobileNav
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", closeMenu));
+    </script>
+  </body>
+</html>

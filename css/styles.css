@@ -2178,3 +2178,448 @@
     .footer-brand,
     .footer-socials{ grid-column: auto; }
   }
+
+  /* =========================================================
+     Essentials page — additive components
+     (built from existing .featured-product / .essentials /
+     .shade / .bag-button patterns above)
+  ========================================================= */
+
+  /* Active nav state */
+  .primary-nav a[aria-current="page"],
+  .mobile-nav a[aria-current="page"]{ color: var(--lum-red-bright); }
+  .primary-nav a[aria-current="page"]::after{ width: 100%; }
+
+  /* Quick jump nav under the page hero */
+  .catalog-nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 22px 48px;
+    background: var(--lum-black-deep);
+    border-bottom: 1px solid rgba(243,237,231,.1);
+  }
+  .catalog-nav a{
+    padding: 10px 22px;
+    color: var(--lum-gray);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(243,237,231,.12);
+    transition: color .3s ease;
+  }
+  .catalog-nav a:last-child{ border-right: 0; }
+  .catalog-nav a span{ color: var(--lum-red-bright); margin-right: 8px; }
+  .catalog-nav a:hover{ color: var(--lum-off-white); }
+
+  @media (max-width: 760px){
+    .catalog-nav{ justify-content: flex-start; overflow-x: auto; padding: 18px 20px; }
+    .catalog-nav a{ flex: 0 0 auto; padding: 8px 16px; }
+  }
+
+  /* Product detail rows */
+  .product-detail{
+    border-bottom: 1px solid rgba(243,237,231,.1);
+    scroll-margin-top: 90px;
+  }
+  .product-detail .featured-product{
+    max-width: 1400px;
+    margin: 0 auto;
+    border-right: 0;
+    min-height: 560px;
+  }
+  .product-detail .featured-product.reverse{
+    grid-template-columns: minmax(250px, 1.16fr) minmax(250px, .84fr);
+  }
+  .product-detail .featured-product.reverse .featured-copy{ order: 2; padding: 68px 48px 52px 26px; }
+  .product-detail .featured-product.reverse .featured-product-image{ order: 1; }
+
+  .product-detail-number{
+    position: absolute;
+    z-index: 2;
+    top: 26px;
+    left: 26px;
+    color: var(--lum-red-bright);
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: 1;
+  }
+  .product-detail .featured-product.reverse .product-detail-number{ left: auto; right: 26px; }
+
+  .product-detail-shop{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 34px;
+  }
+  .product-detail-price{
+    color: var(--lum-off-white);
+    font-family: var(--font-display);
+    font-size: 15px;
+  }
+  .product-detail-shop .shade-list{ margin-top: 0; }
+  .product-detail-shop .bag-button{ margin-left: auto; }
+
+  @media (max-width: 1180px){
+    .product-detail .featured-product{ grid-template-columns: .8fr 1.2fr; }
+    .product-detail .featured-product.reverse{ grid-template-columns: 1.2fr .8fr; }
+    .product-detail .featured-product .featured-copy,
+    .product-detail .featured-product.reverse .featured-copy{ padding-left: 28px; padding-right: 28px; }
+  }
+
+  @media (max-width: 680px){
+    .product-detail .featured-product,
+    .product-detail .featured-product.reverse{ grid-template-columns: 1fr; }
+    .product-detail .featured-product.reverse .featured-copy{ padding: 56px 20px 40px; }
+    .product-detail .featured-product .featured-copy{ padding: 56px 20px 40px; }
+    .product-detail-number{ top: 18px; left: 20px; }
+    .product-detail .featured-product.reverse .product-detail-number{ left: auto; right: 20px; }
+    .product-detail-shop .bag-button{ margin-left: 0; width: 100%; text-align: center; }
+  }
+
+  /* =========================================================
+     Gallery page — photoshoot contact sheets
+     (built from existing .featured-kicker / .featured-tagline /
+     .featured-description type treatments above)
+  ========================================================= */
+
+  .shoot-section{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 88px 48px 0;
+    border-top: 1px solid rgba(243,237,231,.1);
+    scroll-margin-top: 90px;
+  }
+  .shoot-section:first-of-type{ border-top: 0; }
+
+  .shoot-header{
+    max-width: 640px;
+    margin-bottom: 40px;
+  }
+  .shoot-header .featured-kicker{ margin-bottom: 14px; }
+  .shoot-header h2{
+    font-family: var(--font-display);
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 400;
+    color: var(--lum-off-white);
+    line-height: 1.05;
+  }
+  .shoot-header .featured-tagline{ margin-top: 10px; }
+  .shoot-header .featured-description{ margin-top: 16px; max-width: 520px; }
+
+  /* Contact-sheet grid: hairline gaps read like negatives on a light table */
+  .shoot-grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 200px;
+    gap: 2px;
+    background: var(--lum-black);
+    margin-bottom: 88px;
+  }
+  .shoot-grid.layout-a{
+    grid-template-areas:
+      "a a b b c c"
+      "a a b b d e"
+      "f f g g d e"
+      "f f g g h h";
+  }
+  .shoot-grid.layout-b{
+    grid-template-areas:
+      "c c b b a a"
+      "e d b b a a"
+      "e d g g f f"
+      "h h g g f f";
+  }
+  .shoot-photo{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: var(--lum-black-deep);
+  }
+  .shoot-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .7s cubic-bezier(.16,1,.3,1);
+  }
+  .shoot-photo:hover img{ transform: scale(1.045); }
+  .shoot-photo-index{
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    color: var(--lum-off-white);
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    padding: 4px 8px;
+    background: rgba(5,3,2,.55);
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity .35s ease, transform .35s ease;
+  }
+  .shoot-photo:hover .shoot-photo-index{ opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 1180px){
+    .shoot-section{ padding: 72px 32px 0; }
+    .shoot-grid{ grid-auto-rows: 160px; }
+  }
+
+  @media (max-width: 780px){
+    .shoot-section{ padding: 56px 20px 0; }
+    .shoot-grid,
+    .shoot-grid.layout-a,
+    .shoot-grid.layout-b{
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: none;
+      grid-auto-rows: 190px;
+    }
+    .shoot-grid .shoot-photo{ grid-area: auto !important; }
+    .shoot-grid .shoot-photo:first-child{
+      grid-column: 1 / -1;
+      grid-row: span 2;
+    }
+    .shoot-header{ margin-bottom: 28px; }
+  }
+
+  /* =========================================================
+     Models page — model dossier cards
+     (borrows hairline borders / kicker treatment used above)
+  ========================================================= */
+
+  .model-intro{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 88px 48px 56px;
+  }
+  .model-intro p{
+    max-width: 560px;
+    color: var(--lum-gray);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .model-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+    margin: 0 auto 100px;
+    padding: 0 48px;
+    gap: 1px;
+    background: rgba(243,237,231,.09);
+  }
+
+  .model-card{
+    display: flex;
+    flex-direction: column;
+    background: var(--lum-black-deep);
+  }
+
+  .model-photo{
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+  .model-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform .7s cubic-bezier(.16,1,.3,1);
+  }
+  .model-card:hover .model-photo img{ transform: scale(1.045); }
+  .model-photo::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 55%, rgba(5,3,2,.82) 100%);
+    pointer-events: none;
+  }
+  .model-shoot-tag{
+    position: absolute;
+    z-index: 2;
+    left: 18px;
+    bottom: 16px;
+    color: var(--lum-off-white);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+  }
+  .model-shoot-tag span{ color: var(--lum-red-bright); margin-right: 8px; }
+
+  .model-info{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 26px 26px 30px;
+    border-top: 1px solid rgba(243,237,231,.09);
+  }
+  .model-info .featured-kicker{ margin-bottom: 10px; }
+  .model-info h2{
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--lum-off-white);
+    line-height: 1.15;
+  }
+  .model-tagline{
+    margin-top: 4px;
+    color: var(--lum-red-bright);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+  }
+  .model-bio{
+    margin-top: 14px;
+    color: var(--lum-gray);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .model-stats{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(243,237,231,.09);
+  }
+  .model-stats div{ min-width: 0; }
+  .model-stats dt{
+    color: var(--lum-gray);
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+  .model-stats dd{
+    margin-top: 5px;
+    color: var(--lum-off-white);
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .model-stats dd a{
+    color: var(--lum-off-white);
+    border-bottom: 1px solid rgba(243,237,231,.3);
+    transition: color .3s ease, border-color .3s ease;
+  }
+  .model-stats dd a:hover{
+    color: var(--lum-red-bright);
+    border-color: var(--lum-red-bright);
+  }
+
+  @media (max-width: 1180px){
+    .model-grid{ grid-template-columns: repeat(2, 1fr); padding: 0 32px; }
+    .model-intro{ padding: 72px 32px 48px; }
+  }
+
+  @media (max-width: 680px){
+    .model-grid{ grid-template-columns: 1fr; padding: 0 20px; }
+    .model-intro{ padding: 56px 20px 36px; }
+    .model-stats{ grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  }
+
+  /* =========================================================
+     Credits page — masthead
+  ========================================================= */
+
+  .masthead-intro{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 88px 48px 20px;
+  }
+  .masthead-intro p{
+    max-width: 560px;
+    color: var(--lum-gray);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .credits-masthead{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 48px 48px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px 40px;
+  }
+
+  .credit-dept-title{
+    color: var(--lum-off-white);
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgba(195,59,47,.4);
+  }
+
+  .credit-roles{ list-style: none; }
+  .credit-roles li{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(243,237,231,.08);
+  }
+  .credit-roles li:last-child{ border-bottom: 0; }
+  .credit-role{
+    color: var(--lum-gray);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .credit-name{
+    color: var(--lum-off-white);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15px;
+    text-align: right;
+  }
+
+  .masthead-thanks{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 48px 100px;
+    border-top: 1px solid rgba(243,237,231,.1);
+  }
+  .masthead-thanks p{
+    max-width: 620px;
+    color: var(--lum-gray);
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .masthead-thanks p a{
+    color: var(--lum-off-white);
+    border-bottom: 1px solid rgba(243,237,231,.3);
+    transition: color .3s ease, border-color .3s ease;
+  }
+  .masthead-thanks p a:hover{ color: var(--lum-red-bright); border-color: var(--lum-red-bright); }
+
+  @media (max-width: 1180px){
+    .credits-masthead{ grid-template-columns: repeat(2, 1fr); padding: 40px 32px; }
+    .masthead-intro{ padding: 72px 32px 16px; }
+    .masthead-thanks{ padding: 32px 32px 80px; }
+  }
+
+  @media (max-width: 680px){
+    .credits-masthead{ grid-template-columns: 1fr; gap: 40px; padding: 32px 20px; }
+    .masthead-intro{ padding: 56px 20px 12px; }
+    .masthead-thanks{ padding: 28px 20px 64px; }
+    .credit-roles li{ flex-direction: column; align-items: flex-start; gap: 4px; }
+    .credit-name{ text-align: left; }
+  }
