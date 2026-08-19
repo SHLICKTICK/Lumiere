@@ -34,6 +34,23 @@
 
       <div class="header-icons">
         <button
+          class="cart-toggle"
+          aria-label="View cart"
+          id="cartToggle"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+          >
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span id="cartCount">0</span>
+        </button>
+        <button
           class="menu-toggle"
           aria-label="Open menu"
           id="menuToggle"
@@ -134,9 +151,18 @@
     <section class="most-wanted" aria-labelledby="all-products-title">
       <div class="most-wanted-header">
         <h2 id="all-products-title">The Edit</h2>
-        <a href="essentials.html" class="most-wanted-all"
-          >Explore Essentials System <span aria-hidden="true">&rarr;</span></a
-        >
+        <div class="catalog-nav" style="display: flex; gap: 16px; margin-top: 16px;">
+          <a href="#all" class="active">All</a>
+          <a href="#foundation">Foundation</a>
+          <a href="#concealer">Concealer</a>
+          <a href="#lip">Lip</a>
+        </div>
+        <select id="productSort" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--lum-off-white); padding: 8px 12px; font-size: 12px;" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name">Name: A-Z</option>
+        </select>
       </div>
 
       <div class="bestseller-grid">
@@ -185,7 +211,7 @@
                 ></span>
               </div>
             </div>
-            <button class="bag-button" type="button">Add to Bag</button>
+            <button class="bag-button" type="button" data-action="add">Add to Bag</button>
           </div>
         </article>
 
@@ -234,7 +260,7 @@
                 ></span>
               </div>
             </div>
-            <button class="bag-button" type="button">Add to Bag</button>
+            <button class="bag-button" type="button" data-action="add">Add to Bag</button>
           </div>
         </article>
 
@@ -256,7 +282,7 @@
               <p class="bestseller-variant">Liquid Blush</p>
               <p class="bestseller-price">R300</p>
             </div>
-            <button class="bag-button" type="button">Add to Bag</button>
+            <button class="bag-button" type="button" data-action="add">Add to Bag</button>
           </div>
         </article>
 
@@ -278,7 +304,7 @@
               <p class="bestseller-variant">Contour Stick</p>
               <p class="bestseller-price">R420</p>
             </div>
-            <button class="bag-button" type="button">Add to Bag</button>
+            <button class="bag-button" type="button" data-action="add">Add to Bag</button>
           </div>
         </article>
 
@@ -300,7 +326,7 @@
               <p class="bestseller-variant">Precision Liner</p>
               <p class="bestseller-price">R320</p>
             </div>
-            <button class="bag-button" type="button">Add to Bag</button>
+            <button class="bag-button" type="button" data-action="add">Add to Bag</button>
           </div>
         </article>
 
@@ -322,7 +348,7 @@
               <p class="bestseller-variant">Setting Mist</p>
               <p class="bestseller-price">R390</p>
             </div>
-            <button class="bag-button" type="button">Add to Bag</button>
+            <button class="bag-button" type="button" data-action="add">Add to Bag</button>
           </div>
         </article>
       </div>
@@ -565,5 +591,38 @@
         .querySelectorAll("a")
         .forEach((a) => a.addEventListener("click", closeMenu));
     </script>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
+      <div class="cart-drawer-header">
+        <h2>Your Bag</h2>
+        <button class="cart-close" id="cartClose" aria-label="Close cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <line x1="6" y1="6" x2="18" y2="18"/>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <!-- Cart items will be rendered here -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cartTotal">R0.00</span>
+        </div>
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal" aria-hidden="true" aria-label="Product quick view">
+      <div class="quick-view-content" id="quickViewContent" role="dialog" aria-modal="true">
+        <button class="quick-view-close" id="quickViewClose" aria-label="Close quick view">×</button>
+        <!-- Content will be dynamically inserted -->
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
   </body>
 </html>
