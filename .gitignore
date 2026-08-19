@@ -1,1 +1,1 @@
-Nothing needs to be added to .gitignore since the changes only include HTML files (checkout.html and products.html) which are source files and not build artifacts, dependencies, or temporary files.
+(js/main.js and products.html are source files, no build artifacts, dependencies, or temp files detected in the changes)
