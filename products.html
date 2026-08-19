@@ -136,13 +136,13 @@
 
     <!-- ---------- Category Filter Nav ---------- -->
     <nav class="catalog-nav" id="catalog" aria-label="Filter products by category">
-      <a href="#all" class="active"><span>01</span>All Products</a>
-      <a href="#skin"><span>02</span>Skin</a>
-      <a href="#lips"><span>03</span>Lips</a>
-      <a href="#cheeks"><span>04</span>Cheeks</a>
-      <a href="#contour"><span>05</span>Contour</a>
-      <a href="#eyes"><span>06</span>Eyes</a>
-      <a href="#finish"><span>07</span>Finish</a>
+      <a href="#all" class="active" data-filter="all"><span>01</span>All Products</a>
+      <a href="#foundation" data-filter="foundation"><span>02</span>Foundation</a>
+      <a href="#lip" data-filter="lip"><span>03</span>Lips</a>
+      <a href="#cheeks" data-filter="cheeks"><span>04</span>Cheeks</a>
+      <a href="#contour" data-filter="contour"><span>05</span>Contour</a>
+      <a href="#eyes" data-filter="eyes"><span>06</span>Eyes</a>
+      <a href="#finish" data-filter="finish"><span>07</span>Finish</a>
     </nav>
 
     <!-- ---------- Product Grid Section ---------- -->
@@ -150,22 +150,25 @@
       <div class="most-wanted-header">
         <h2 id="all-products-title">The Edit</h2>
         <div class="catalog-nav" style="display: flex; gap: 16px; margin-top: 16px;">
-          <a href="#all" class="active">All</a>
-          <a href="#foundation">Foundation</a>
-          <a href="#concealer">Concealer</a>
-          <a href="#lip">Lip</a>
+          <a href="#all" class="active" data-filter="all">All</a>
+          <a href="#foundation" data-filter="foundation">Foundation</a>
+          <a href="#lip" data-filter="lip">Lip</a>
+          <a href="#cheeks" data-filter="cheeks">Cheeks</a>
+          <a href="#contour" data-filter="contour">Contour</a>
+          <a href="#eyes" data-filter="eyes">Eyes</a>
+          <a href="#finish" data-filter="finish">Finish</a>
         </div>
         <select id="productSort" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--lum-off-white); padding: 8px 12px; font-size: 12px;" aria-label="Sort products">
           <option value="featured">Featured</option>
-          <option value="price-asc">Price: Low to High</option>
-          <option value="price-desc">Price: High to Low</option>
-          <option value="name">Name: A-Z</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="name-az">Name: A-Z</option>
         </select>
       </div>
 
       <div class="bestseller-grid">
         <!-- Item 01: Skin Veil -->
-        <article class="bestseller-card">
+        <article class="bestseller-card product-card" data-product-id="skin-veil" data-product-name="Skin Veil" data-product-price="620" data-product-image="assets/essentials/lumiere-skin-veil-foundation.png" data-category="foundation">
           <a
             href="essentials.html#skin-veil"
             class="bestseller-image"
@@ -174,6 +177,7 @@
             <img
               src="assets/essentials/lumiere-skin-veil-foundation.png"
               alt="Lumiere Skin Veil serum foundation"
+              loading="lazy"
             />
           </a>
           <div class="bestseller-info">
@@ -186,26 +190,31 @@
                   class="shade active"
                   style="--shade: #e4aa77"
                   title="Light Warm"
+                  data-shade="#e4aa77"
                 ></span>
                 <span
                   class="shade"
                   style="--shade: #cb8e61"
                   title="Medium Warm"
+                  data-shade="#cb8e61"
                 ></span>
                 <span
                   class="shade"
                   style="--shade: #ae7048"
                   title="Tan Neutral"
+                  data-shade="#ae7048"
                 ></span>
                 <span
                   class="shade"
                   style="--shade: #8d5438"
                   title="Deep Warm"
+                  data-shade="#8d5438"
                 ></span>
                 <span
                   class="shade"
                   style="--shade: #6e3f2e"
                   title="Rich Neutral"
+                  data-shade="#6e3f2e"
                 ></span>
               </div>
             </div>
@@ -214,7 +223,7 @@
         </article>
 
         <!-- Item 02: Glass -->
-        <article class="bestseller-card">
+        <article class="bestseller-card product-card" data-product-id="glass" data-product-name="Glass" data-product-price="340" data-product-image="assets/essentials/lumiere-glass-lip-oil.png" data-category="lip">
           <a
             href="essentials.html#glass"
             class="bestseller-image"
@@ -223,6 +232,7 @@
             <img
               src="assets/essentials/lumiere-glass-lip-oil.png"
               alt="Lumiere Glass lip oil"
+              loading="lazy"
             />
           </a>
           <div class="bestseller-info">
@@ -235,16 +245,19 @@
                   class="shade active"
                   style="--shade: #a31527"
                   title="Blood Cherry"
+                  data-shade="#a31527"
                 ></span>
                 <span
                   class="shade"
                   style="--shade: #be313f"
                   title="Crimson"
+                  data-shade="#be313f"
                 ></span>
                 <span
                   class="shade"
                   style="--shade: #8e2632"
                   title="Merlot"
+                  data-shade="#8e2632"
                 ></span>
                 <span
                   class="shade"
@@ -263,7 +276,7 @@
         </article>
 
         <!-- Item 03: Flush -->
-        <article class="bestseller-card">
+        <article class="bestseller-card product-card" data-product-id="flush" data-product-name="Flush" data-product-price="300" data-product-image="assets/essentials/lumiere-flush-liquid-blush.png" data-category="cheeks">
           <a
             href="essentials.html#flush"
             class="bestseller-image"
@@ -272,6 +285,7 @@
             <img
               src="assets/essentials/lumiere-flush-liquid-blush.png"
               alt="Lumiere Flush liquid blush"
+              loading="lazy"
             />
           </a>
           <div class="bestseller-info">
@@ -285,7 +299,7 @@
         </article>
 
         <!-- Item 04: Sculpt -->
-        <article class="bestseller-card">
+        <article class="bestseller-card product-card" data-product-id="sculpt" data-product-name="Sculpt" data-product-price="420" data-product-image="assets/essentials/lumiere-sculpt-contour-stick.png" data-category="contour">
           <a
             href="essentials.html#sculpt"
             class="bestseller-image"
@@ -294,6 +308,7 @@
             <img
               src="assets/essentials/lumiere-sculpt-contour-stick.png"
               alt="Lumiere Sculpt contour stick"
+              loading="lazy"
             />
           </a>
           <div class="bestseller-info">
@@ -307,7 +322,7 @@
         </article>
 
         <!-- Item 05: Obsidian -->
-        <article class="bestseller-card">
+        <article class="bestseller-card product-card" data-product-id="obsidian" data-product-name="Obsidian" data-product-price="320" data-product-image="assets/essentials/lumiere-obsidian-precision-liner.png" data-category="eyes">
           <a
             href="essentials.html#obsidian"
             class="bestseller-image"
@@ -316,6 +331,7 @@
             <img
               src="assets/essentials/lumiere-obsidian-precision-liner.png"
               alt="Lumiere Obsidian precision liner"
+              loading="lazy"
             />
           </a>
           <div class="bestseller-info">
@@ -329,7 +345,7 @@
         </article>
 
         <!-- Item 06: Afterglow -->
-        <article class="bestseller-card">
+        <article class="bestseller-card product-card" data-product-id="afterglow" data-product-name="Afterglow" data-product-price="380" data-product-image="assets/essentials/lumiere-afterglow-setting-mist.png" data-category="finish">
           <a
             href="essentials.html#afterglow"
             class="bestseller-image"
@@ -338,6 +354,7 @@
             <img
               src="assets/essentials/lumiere-afterglow-setting-mist.png"
               alt="Lumiere Afterglow setting mist"
+              loading="lazy"
             />
           </a>
           <div class="bestseller-info">
