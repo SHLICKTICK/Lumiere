@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | LUMIÈRE BEAUTY</title>
+    <meta name="description" content="Complete your purchase at LUMIÈRE BEAUTY. Secure checkout with multiple payment options.">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .checkout-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 2rem;
+        }
+
+        .checkout-form {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .order-summary {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 8px;
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+
+        .form-section {
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #c9a962;
+            box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.1);
+        }
+
+        .form-group input.error {
+            border-color: #d32f2f;
+        }
+
+        .error-message {
+            color: #d32f2f;
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-group input.error + .error-message {
+            display: block;
+        }
+
+        .cart-items-checkout {
+            margin-bottom: 1.5rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .cart-item-checkout {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .cart-item-checkout img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 500;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-shade {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-quantity {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .cart-item-price {
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .summary-row.total {
+            border-top: 2px solid #1a1a1a;
+            border-bottom: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            padding: 1rem;
+            background: #1a1a1a;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 1.5rem;
+        }
+
+        .checkout-btn:hover {
+            background: #333;
+        }
+
+        .checkout-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .payment-method {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .payment-method:hover {
+            border-color: #c9a962;
+        }
+
+        .payment-method.selected {
+            border-color: #c9a962;
+            background: rgba(201, 169, 98, 0.05);
+        }
+
+        .payment-method i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .empty-cart-checkout {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .empty-cart-checkout h2 {
+            margin-bottom: 1rem;
+        }
+
+        .continue-shopping-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .continue-shopping-btn:hover {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .breadcrumb {
+            padding: 1rem 2rem;
+            background: #fafafa;
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumb a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #1a1a1a;
+        }
+
+        .breadcrumb span {
+            color: #ccc;
+            margin: 0 0.5rem;
+        }
+
+        /* Success Modal */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1001;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success-modal.active {
+            display: flex;
+        }
+
+        .success-content {
+            background: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #4CAF50;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+            }
+
+            .order-summary {
+                position: static;
+                order: -1;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">LUMIÈRE</a>
+            <nav class="main-nav">
+                <a href="products.html">Shop</a>
+                <a href="models.html">Models</a>
+                <a href="magazines.html">Magazines</a>
+                <a href="essentials.html">Essentials</a>
+                <a href="gallery.html">Gallery</a>
+            </nav>
+            <div class="header-actions">
+                <button class="cart-toggle" aria-label="View cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="products.html">Shop</a>
+        <span>/</span>
+        <span>Checkout</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="checkout-container" id="checkout-page">
+        <!-- Checkout Form -->
+        <div class="checkout-form">
+            <h1 class="section-title">Checkout</h1>
+
+            <!-- Contact Information -->
+            <div class="form-section">
+                <h2 class="section-title">Contact Information</h2>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" required aria-required="true">
+                    <span class="error-message">Please enter a valid email address</span>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 (555) 000-0000">
+                </div>
+            </div>
+
+            <!-- Shipping Address -->
+            <div class="form-section">
+                <h2 class="section-title">Shipping Address</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" required aria-required="true">
+                        <span class="error-message">First name is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" required aria-required="true">
+                        <span class="error-message">Last name is required</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address *</label>
+                    <input type="text" id="address" required aria-required="true" placeholder="Street address">
+                    <span class="error-message">Address is required</span>
+                </div>
+                <div class="form-group">
+                    <label for="address2">Apartment, suite, etc. (optional)</label>
+                    <input type="text" id="address2" placeholder="Apt, Suite, Unit, Building, Floor">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City *</label>
+                        <input type="text" id="city" required aria-required="true">
+                        <span class="error-message">City is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="state">State/Province *</label>
+                        <input type="text" id="state" required aria-required="true">
+                        <span class="error-message">State/Province is required</span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="zip">ZIP/Postal Code *</label>
+                        <input type="text" id="zip" required aria-required="true">
+                        <span class="error-message">ZIP/Postal code is required</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country *</label>
+                        <select id="country" required aria-required="true">
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="FR">France</option>
+                            <option value="DE">Germany</option>
+                            <option value="AU">Australia</option>
+                        </select>
+                        <span class="error-message">Country is required</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Method -->
+            <div class="form-section">
+                <h2 class="section-title">Payment Method</h2>
+                <div class="payment-methods">
+                    <div class="payment-method selected" data-method="card">
+                        <i>💳</i>
+                        <span>Credit Card</span>
+                    </div>
+                    <div class="payment-method" data-method="paypal">
+                        <i>🅿️</i>
+                        <span>PayPal</span>
+                    </div>
+                    <div class="payment-method" data-method="apple">
+                        <i>🍎</i>
+                        <span>Apple Pay</span>
+                    </div>
+                </div>
+
+                <div id="card-details">
+                    <div class="form-group">
+                        <label for="cardNumber">Card Number *</label>
+                        <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        <span class="error-message">Please enter a valid card number</span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date *</label>
+                            <input type="text" id="expiry" placeholder="MM/YY" maxlength="5">
+                            <span class="error-message">Invalid expiry date</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV *</label>
+                            <input type="text" id="cvv" placeholder="123" maxlength="4">
+                            <span class="error-message">Invalid CVV</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cardName">Name on Card *</label>
+                        <input type="text" id="cardName" placeholder="John Doe">
+                        <span class="error-message">Name on card is required</span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="checkout-btn" id="placeOrderBtn">Place Order</button>
+
+            <div class="secure-badge">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>Secure checkout powered by SSL encryption</span>
+            </div>
+        </div>
+
+        <!-- Order Summary -->
+        <aside class="order-summary">
+            <h2 class="section-title">Order Summary</h2>
+            
+            <div id="cart-items-container" class="cart-items-checkout">
+                <!-- Cart items will be inserted here -->
+            </div>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping</span>
+                <span id="shipping">$0.00</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax</span>
+                <span id="tax">$0.00</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">$0.00</span>
+            </div>
+
+            <button type="button" class="checkout-btn" id="placeOrderBtnBottom" style="display: none;">Place Order</button>
+        </aside>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal" role="dialog" aria-labelledby="successTitle" aria-modal="true">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h2 id="successTitle">Order Confirmed!</h2>
+            <p>Thank you for your purchase. Your order has been successfully placed.</p>
+            <p style="margin-top: 1rem; color: #666;">Order Number: <strong id="orderNumber"></strong></p>
+            <p style="margin-top: 0.5rem; color: #666;">A confirmation email has been sent to <strong id="confirmationEmail"></strong></p>
+            <a href="index.html" class="continue-shopping-btn" style="display: inline-block; margin-top: 1.5rem;">Continue Shopping</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>LUMIÈRE BEAUTY</h3>
+                <p>Redefining beauty standards with inclusive, high-performance cosmetics for all skin tones.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Care</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Shipping Info</a>
+                <a href="#">Returns</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LUMIÈRE BEAUTY. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Checkout Page Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get cart from localStorage
+            let cart = JSON.parse(localStorage.getItem('lumiereCart')) || [];
+            
+            // Render cart items
+            renderCartItems();
+            
+            // Update totals
+            updateTotals();
+            
+            // If cart is empty, redirect or show message
+            if (cart.length === 0) {
+                showEmptyCart();
+            }
+
+            // Payment method selection
+            const paymentMethods = document.querySelectorAll('.payment-method');
+            paymentMethods.forEach(method => {
+                method.addEventListener('click', function() {
+                    paymentMethods.forEach(m => m.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    const cardDetails = document.getElementById('card-details');
+                    if (this.dataset.method === 'card') {
+                        cardDetails.style.display = 'block';
+                    } else {
+                        cardDetails.style.display = 'none';
+                    }
+                });
+            });
+
+            // Form validation
+            const placeOrderBtns = [
+                document.getElementById('placeOrderBtn'),
+                document.getElementById('placeOrderBtnBottom')
+            ];
+
+            placeOrderBtns.forEach(btn => {
+                if (btn) {
+                    btn.addEventListener('click', validateAndPlaceOrder);
+                }
+            });
+
+            // Input validation on blur
+            const requiredInputs = document.querySelectorAll('input[required], select[required]');
+            requiredInputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    validateField(this);
+                });
+                
+                input.addEventListener('input', function() {
+                    if (this.classList.contains('error')) {
+                        validateField(this);
+                    }
+                });
+            });
+
+            // Card number formatting
+            const cardNumberInput = document.getElementById('cardNumber');
+            if (cardNumberInput) {
+                cardNumberInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    value = value.match(/.{1,4}/g)?.join(' ') || '';
+                    e.target.value = value;
+                });
+            }
+
+            // Expiry date formatting
+            const expiryInput = document.getElementById('expiry');
+            if (expiryInput) {
+                expiryInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length >= 2) {
+                        value = value.slice(0, 2) + '/' + value.slice(2, 4);
+                    }
+                    e.target.value = value;
+                });
+            }
+
+            // CVV validation
+            const cvvInput = document.getElementById('cvv');
+            if (cvvInput) {
+                cvvInput.addEventListener('input', function(e) {
+                    e.target.value = e.target.value.replace(/\D/g, '').slice(0, 4);
+                });
+            }
+        });
+
+        function renderCartItems() {
+            const cart = JSON.parse(localStorage.getItem('lumiereCart')) || [];
+            const container = document.getElementById('cart-items-container');
+            
+            if (cart.length === 0) {
+                container.innerHTML = '<p>Your cart is empty</p>';
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="cart-item-checkout">
+                    <img src="${item.image}" alt="${item.name}" loading="lazy">
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        ${item.shade ? `<div class="cart-item-shade">Shade: ${item.shade}</div>` : ''}
+                        <div class="cart-item-quantity">Qty: ${item.quantity}</div>
+                    </div>
+                    <div class="cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
+                </div>
+            `).join('');
+        }
+
+        function updateTotals() {
+            const cart = JSON.parse(localStorage.getItem('lumiereCart')) || [];
+            
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = subtotal > 50 ? 0 : 9.99;
+            const tax = subtotal * 0.08;
+            const total = subtotal + shipping + tax;
+
+            document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('shipping').textContent = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
+            document.getElementById('tax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        function showEmptyCart() {
+            const container = document.getElementById('cart-items-container');
+            container.innerHTML = `
+                <div class="empty-cart-checkout">
+                    <h2>Your cart is empty</h2>
+                    <p>Add some products to your cart before checking out.</p>
+                    <a href="products.html" class="continue-shopping-btn">Continue Shopping</a>
+                </div>
+            `;
+            
+            // Hide place order buttons
+            const btns = document.querySelectorAll('#placeOrderBtn, #placeOrderBtnBottom');
+            btns.forEach(btn => btn.style.display = 'none');
+        }
+
+        function validateField(field) {
+            const value = field.value.trim();
+            const fieldType = field.type;
+            let isValid = true;
+
+            if (field.hasAttribute('required') && !value) {
+                isValid = false;
+            } else if (fieldType === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                isValid = emailRegex.test(value);
+            } else if (field.id === 'zip' && value) {
+                const zipRegex = /^\d{5}(-\d{4})?$/;
+                isValid = zipRegex.test(value);
+            }
+
+            if (!isValid) {
+                field.classList.add('error');
+            } else {
+                field.classList.remove('error');
+            }
+
+            return isValid;
+        }
+
+        function validateAndPlaceOrder() {
+            const requiredFields = document.querySelectorAll('input[required], select[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+
+            // Validate payment if card selected
+            const selectedPayment = document.querySelector('.payment-method.selected');
+            if (selectedPayment && selectedPayment.dataset.method === 'card') {
+                const cardNumber = document.getElementById('cardNumber').value.trim();
+                const expiry = document.getElementById('expiry').value.trim();
+                const cvv = document.getElementById('cvv').value.trim();
+                const cardName = document.getElementById('cardName').value.trim();
+
+                if (!cardNumber || cardNumber.replace(/\s/g, '').length < 13) {
+                    document.getElementById('cardNumber').classList.add('error');
+                    isValid = false;
+                }
+                if (!expiry || !/^\d{2}\/\d{2}$/.test(expiry)) {
+                    document.getElementById('expiry').classList.add('error');
+                    isValid = false;
+                }
+                if (!cvv || cvv.length < 3) {
+                    document.getElementById('cvv').classList.add('error');
+                    isValid = false;
+                }
+                if (!cardName) {
+                    document.getElementById('cardName').classList.add('error');
+                    isValid = false;
+                }
+            }
+
+            if (!isValid) {
+                // Scroll to first error
+                const firstError = document.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                return;
+            }
+
+            // Process order
+            processOrder();
+        }
+
+        function processOrder() {
+            const btn = document.getElementById('placeOrderBtn');
+            btn.disabled = true;
+            btn.textContent = 'Processing...';
+
+            // Simulate order processing
+            setTimeout(() => {
+                // Generate order number
+                const orderNumber = 'LUM-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+                const email = document.getElementById('email').value;
+
+                // Clear cart
+                localStorage.removeItem('lumiereCart');
+                
+                // Update cart count in header
+                updateCartCount();
+
+                // Show success modal
+                document.getElementById('orderNumber').textContent = orderNumber;
+                document.getElementById('confirmationEmail').textContent = email;
+                document.getElementById('successModal').classList.add('active');
+
+                // Disable scroll
+                document.body.style.overflow = 'hidden';
+            }, 2000);
+        }
+
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('lumiereCart')) || [];
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.querySelectorAll('.cart-count').forEach(el => {
+                el.textContent = count;
+            });
+        }
+
+        // Close success modal on outside click
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
